@@ -15,7 +15,7 @@ class EmpleadoTable extends Migration
     {
         Schema::create('empleado_table', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('CI');
+            $table->string('ci');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('edad');

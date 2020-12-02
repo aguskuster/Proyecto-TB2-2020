@@ -25,8 +25,35 @@
                 <th scope="col">Papelera</th>
             </tr>
         </thead>
+        
+        @if ($empleados)
+        @foreach ($empleados as $e)
 
-       
+            <tbody>
+                <tr>
+                    <th scope="row"> {{ $e->CI }} </th>
+                    <td> {{ $e->nombre }} </td>
+                    <td> {{ $e->apellido }} </td>
+                    <td> {{ $e->edad }} </td>
+                    <td> {{ $e->telefono }} </td>
+                    <td> {{ $e->email }} </td>
+                    <td><a href="#">Eliminar {{ $e->id }} </a></td>
+                </tr>
 
+            </tbody>
+
+        @endforeach
+        
+        @endif
+
+    </table>
+
+
+
+
+
+
+
+</div>
 
 @include('templates/footer')

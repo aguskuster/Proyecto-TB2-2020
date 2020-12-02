@@ -21,9 +21,8 @@ Route::get('/', function () {
 
 Route::get('/Cliente','clienteController@listarClientes');
 
-Route::get('/Empleado', function () {
-    return view('empleado');
-});
+Route::get('/Empleado','empleadoController@listarEmpleados' );
+
 
 
 Route::get('/Compra', function () {
@@ -50,3 +49,5 @@ Route::post('/altaCliente','clienteController@altaCliente');
 Route::get('/altaEmpleado', function () {
     return view('formularios/altaEmpleado');
 });
+
+Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');

@@ -49,7 +49,7 @@
             }
 
             .links > a {
-                color: blue;
+                color: #636b6f;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -89,14 +89,10 @@
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">GLOBAL</a>
+                    <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">MINECRAFT</a>
+                    <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-
-                    @if(isset($user))
-                <a href="https://github.com/laravel/laravel">{{ $user }}</a>
-                    @endif
                 </div>
             </div>
         </div>

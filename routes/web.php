@@ -14,3 +14,26 @@
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('/Clientes', function () {
+    return view('clientes');
+});
+
+Route::get('/Empleados', function () {
+    return view('empleados');
+});
+
+
+Route::get('/Compras', function () {
+    return view('compras');
+});
+
+Route::get('/Ventas', function () {
+    return view('ventas');
+});
+
+Route::get('/Insumos', function () {
+    return view('insumos');
+});
+

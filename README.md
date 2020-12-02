@@ -23,14 +23,19 @@ php artisan serve`
 # Ejecutar con Docker
 
 Requermientos:
-- Docker :)
+- Docker :
 
 Ejecutar:
-` docker-compose up`
-` docker exec -ti laravel_app /bin/bash`
-` php artisan key:generate`
-` php artisan migrate:fresh`
-` php artisan serve`
+` # docker-compose up`
+
+` # docker exec -ti laravel_app /bin/bash`
+
+` # php artisan key:generate`
+
+` # php artisan migrate:fresh`
+
+` # php artisan serve`
+
 
 
 docker exec -ti laravel_mysql mysql -u root

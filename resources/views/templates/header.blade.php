@@ -52,8 +52,6 @@
                     <a class="nav-link" href="/Ventas">Ventas</a>
                 </li>
             
-               
-
 
             </ul>
         </div>

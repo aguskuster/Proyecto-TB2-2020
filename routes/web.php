@@ -21,20 +21,20 @@ Route::get('/', function () {
 
 Route::get('/Cliente','clienteController@listarClientes');
 
-Route::get('/Empleados', function () {
+Route::get('/Empleado', function () {
     return view('empleado');
 });
 
 
-Route::get('/Compras', function () {
+Route::get('/Compra', function () {
     return view('compra');
 });
 
-Route::get('/Ventas', function () {
+Route::get('/Venta', function () {
     return view('venta');
 });
 
-Route::get('/Insumos', function () {
+Route::get('/Insumo', function () {
     return view('insumo');
 });
 

@@ -36,20 +36,20 @@
             <ul class="navbar-nav">
                
                 <li class="nav-item">
-                    <a class="nav-link" href="/Empleados">Empleados</a>
+                    <a class="nav-link" href="/Empleado">Empleados</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Cliente">Clientes</a>
                 </li>
              
                 <li class="nav-item">
-                    <a class="nav-link" href="/Insumos">Insumos</a>
+                    <a class="nav-link" href="/Insumo">Insumos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Compras">Compras</a>
+                    <a class="nav-link" href="/Compra">Compras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Ventas">Ventas</a>
+                    <a class="nav-link" href="/Venta">Ventas</a>
                 </li>
             
 

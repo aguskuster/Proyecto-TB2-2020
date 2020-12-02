@@ -43,7 +43,7 @@
                 </li>
              
                 <li class="nav-item">
-                    <a class="nav-link" href="/productos">Insumos</a>
+                    <a class="nav-link" href="/Insumos">Insumos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Compras">Compras</a>

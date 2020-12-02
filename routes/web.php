@@ -17,23 +17,23 @@ Route::get('/', function () {
 
 
 Route::get('/Clientes', function () {
-    return view('clientes');
+    return view('cliente');
 });
 
 Route::get('/Empleados', function () {
-    return view('empleados');
+    return view('empleado');
 });
 
 
 Route::get('/Compras', function () {
-    return view('compras');
+    return view('compra');
 });
 
 Route::get('/Ventas', function () {
-    return view('ventas');
+    return view('venta');
 });
 
 Route::get('/Insumos', function () {
-    return view('insumos');
+    return view('insumo');
 });
 

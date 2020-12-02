@@ -10,10 +10,13 @@
     <form action="/altaEmpleado" method="post" class="needs-validation">
 
         @csrf
-
+        <div class="form-group">
+            <label for="inputRUT">Cedula</label>
+            <input type="text" class="form-control" name="ci" id="inputCedula" placeholder="Ingrese Cedula" required>
+        </div>
         <div class="form-group">
             <label for="inputRUT">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Ingrese Nombre" required>
+            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Ingresesu Nombre" required>
         </div>
 
         <div class="form-group">
@@ -24,7 +27,7 @@
         <div class="form-group">
             <label for="inputEmpresaNombre">Edad</label>
             <input type="text" class="form-control" name="edad" id="inputEdad"
-                placeholder="Ingrese su Edad" required>
+                placeholder="Ingrese Edad" required>
         </div>
 
         <div class="form-group">
@@ -35,7 +38,7 @@
 
         <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
+            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Ingrese Email" required>
         </div>
 
 

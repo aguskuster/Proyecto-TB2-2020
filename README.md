@@ -27,7 +27,8 @@ Requermientos:
 
 Ejecutar:
 ` docker-compose up`
+` docker exec -ti laravel_app /bin/bash`
+` php artisan key:generate`
+` php artisan migrate:fresh`
+` php artisan serve`
 
-Ejecutar comandos dentro del contenedor
-- Meternos adentro del contenedor de laravel: docker exec -ti laravel_app /bin/bash
--  Ejecutar directamente: docker exec -ti laravel_app php /app/artisan [COMANDO]

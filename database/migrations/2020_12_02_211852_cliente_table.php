@@ -15,9 +15,9 @@ class ClienteTable extends Migration
     {
         Schema::create('cliente_table', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('rut');
+            $table->string('rut');
             $table->string('empresa');
-            $table->integer('telefono');
+            $table->string('telefono');
             $table->string('email');
             $table->timestamps();
         });

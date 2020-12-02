@@ -11,14 +11,15 @@
 |
 */
 
+
+// VISTAS PRINCIPALES 
+
 Route::get('/', function () {
     return view('home');
 });
 
 
-Route::get('/Clientes', function () {
-    return view('cliente');
-});
+Route::get('/Cliente','clienteController@listarClientes');
 
 Route::get('/Empleados', function () {
     return view('empleado');
@@ -37,3 +38,11 @@ Route::get('/Insumos', function () {
     return view('insumo');
 });
 
+
+// FORMULARIOS 
+
+Route::get('/altaCliente', function () {
+    return view('formularios/altaCliente');
+});
+
+Route::post('/altaCliente','clienteController@altaCliente');

@@ -49,3 +49,21 @@ $user = new App\User;
 $user->name = 'nombre'; $user->email = 'un@mail.com';
 $user->password = Hash::make('12345');
 $user->save();
+
+
+
+
+
+Comandos php artisan make:
+` php artisan make:controller nombreDelControlador # CREAR UN CONTROLADOR`
+
+` php artisan make:model nombreDelModelo # CREA UN MODELO`
+
+` # php artisan make:migration nombreDeLaMigracion # CREA UNA MIGRACION`
+
+` # LUEGO DE CREAR LA MIGRATION Y PONER EL CODIGO PARA CREAR LA TABLA , ACORDATE DE PONER:`
+
+` # php artisan migrate`
+
+
+` # php artisan serve`

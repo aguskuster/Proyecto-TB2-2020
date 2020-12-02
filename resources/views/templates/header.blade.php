@@ -13,7 +13,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <title>P & P</title>
+    <title>Insumos Inf.</title>
 
 
     <style>
@@ -39,7 +39,7 @@
                     <a class="nav-link" href="/Empleados">Empleados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Clientes">Clientes</a>
+                    <a class="nav-link" href="/Cliente">Clientes</a>
                 </li>
              
                 <li class="nav-item">

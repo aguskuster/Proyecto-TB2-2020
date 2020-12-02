@@ -46,3 +46,7 @@ Route::get('/altaCliente', function () {
 });
 
 Route::post('/altaCliente','clienteController@altaCliente');
+
+Route::get('/altaEmpleado', function () {
+    return view('formularios/altaEmpleado');
+});

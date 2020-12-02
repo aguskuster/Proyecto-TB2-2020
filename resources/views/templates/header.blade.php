@@ -27,22 +27,33 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">P & P</a>
+        <a class="navbar-brand" href="#">Insumos Inf.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="/Empleados">Empleados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/personas">Personas</a>
+                    <a class="nav-link" href="/Clientes">Clientes</a>
+                </li>
+             
+                <li class="nav-item">
+                    <a class="nav-link" href="/productos">Insumos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/productos">Productos</a>
+                    <a class="nav-link" href="/Compras">Compras</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Ventas">Ventas</a>
+                </li>
+            
+               
+
 
             </ul>
         </div>

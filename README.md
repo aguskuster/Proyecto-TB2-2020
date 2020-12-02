@@ -31,3 +31,14 @@ Ejecutar:
 Ejecutar comandos dentro del contenedor
 - Meternos adentro del contenedor de laravel: docker exec -ti laravel_app /bin/bash
 -  Ejecutar directamente: docker exec -ti laravel_app php /app/artisan [COMANDO]
+
+
+docker exec -ti laravel_mysql mysql -u root
+
+Iniciar Tinker: php artisan tinker
+
+Crear usuario con Tinker:
+$user = new App\User; 
+$user->name = 'nombre'; $user->email = 'un@mail.com';
+$user->password = Hash::make('12345');
+$user->save();

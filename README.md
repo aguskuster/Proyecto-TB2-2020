@@ -32,6 +32,8 @@ Ejecutar:
 
 ` # php artisan key:generate`
 
+` # php artisan config:cache`
+
 ` # php artisan migrate:fresh`
 
 ` # php artisan serve`

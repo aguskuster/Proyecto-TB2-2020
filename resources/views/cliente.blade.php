@@ -8,7 +8,7 @@
 
     <br><br>
 
-    <button type="button" class="btn btn-success btn-lg btn-block">Agregar Cliente</button>
+    <button type="button"  style="border-radius:10px 10px 0px 0px;" class="btn btn-success btn-lg btn-block">Agregar Cliente</button>
 
     
 

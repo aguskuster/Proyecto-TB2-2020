@@ -1,0 +1,1 @@
+Persona {{ $nombre }} {{ $apellido }} creado.

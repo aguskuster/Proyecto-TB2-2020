@@ -8,8 +8,8 @@
 
     <br><br>
 
-    <a
-    href="/altaCliente" style="text-decoration:none;"> <button type="button" style="border-radius:10px 10px 0px 0px;" class="btn btn-success btn-lg btn-block">Agregar Cliente</button></a>
+    <a href="/altaCliente" style="text-decoration:none;"> <button type="button" style="border-radius:10px 10px 0px 0px;"
+            class="btn btn-success btn-lg btn-block">Agregar Cliente</button></a>
 
 
 
@@ -25,23 +25,26 @@
             </tr>
         </thead>
 
-        @isset($clientes)
+        @if ($clientes)
         @foreach ($clientes as $c)
-            
+
+            <tbody>
+                <tr>
+                    <th scope="row"> {{ $c->id }} </th>
+                    <td> {{ $c->rut }} </td>
+                    <td> {{ $c->empresa }} </td>
+                    <td> {{ $c->telefono }} </td>
+                    <td> {{ $c->email }} </td>
+                    <td><a href="#">Eliminar {{ $c->id }} </a></td>
+                </tr>
+
+            </tbody>
+
         @endforeach
-        <tbody>
-            <tr>
-            <th scope="row"> {{ $c -> id}} </th>
-                <td> {{ $c -> rut}} </td>
-                <td> {{ $c -> empresa}} </td>
-                <td> {{ $c -> telefono}} </td>
-                <td> {{ $c -> email}} </td>
-                <td><a href="#">Eliminar {{ $c -> id}} </a></td>
-            </tr>
+        
+        @endif
 
-        </tbody>
 
-        @endisset
     </table>
 
 

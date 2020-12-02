@@ -2,6 +2,12 @@
 
 
 <div class="container">
+
+    @isset($clienteCreado)
+
+    <script>alert("Cliente Creado")</script>
+    
+    @endisset
     <br><br>
     <h3 class="text-center">Agregar cliente</h3>
 
@@ -16,19 +22,21 @@
 
         <div class="form-group">
             <label for="inputEmpresaNombre">Empresa</label>
-            <input type="text" class="form-control" name="empresa" id="inputEmpresaNombre" placeholder="Ingrese nombre de la empresa" required>
+            <input type="text" class="form-control" name="empresa" id="inputEmpresaNombre"
+                placeholder="Ingrese nombre de la empresa" required>
         </div>
 
         <div class="form-group">
             <label for="inputTelefono">Telefono</label>
-            <input type="text" class="form-control" name="telefono" id="inputTelefono" placeholder="Ingrese numero de telefono" required>
+            <input type="text" class="form-control" name="telefono" id="inputTelefono"
+                placeholder="Ingrese numero de telefono" required>
         </div>
 
         <div class="form-group">
             <label for="inputEmail">Email</label>
             <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
         </div>
-    
+
 
         <button type="submit" class="btn btn-info">Agregar</button>
     </form>

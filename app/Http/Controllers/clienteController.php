@@ -19,9 +19,8 @@ class clienteController extends Controller
         $cliente -> save();
 
         
-
-      
-        echo "<script>alert('PersonaCreada')</script>";
+        return view('formularios/altaCliente', ['clienteCreado' => $cliente]);
+       
     }
 
 

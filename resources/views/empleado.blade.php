@@ -8,7 +8,7 @@
 
     <br><br>
 
-    <a href="/altaCliente" style="text-decoration:none;"> <button type="button" style="border-radius:10px 10px 0px 0px;"
+    <a href="/altaEmpleado" style="text-decoration:none;"> <button type="button" style="border-radius:10px 10px 0px 0px;"
             class="btn btn-success btn-lg btn-block">Agregar Empleado</button></a>
 
 

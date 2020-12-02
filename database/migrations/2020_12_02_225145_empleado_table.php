@@ -15,12 +15,14 @@ class EmpleadoTable extends Migration
     {
         Schema::create('empleado_table', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('CI');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('edad');
             $table->string('telefono');
             $table->string('email');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

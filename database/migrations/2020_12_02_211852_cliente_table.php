@@ -19,7 +19,8 @@ class ClienteTable extends Migration
             $table->string('empresa');
             $table->string('telefono');
             $table->string('email');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
 
     }

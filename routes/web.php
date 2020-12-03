@@ -29,9 +29,7 @@ Route::get('/Compra', function () {
     return view('compra');
 });
 
-Route::get('/Venta', function () {
-    return view('venta');
-});
+Route::get('/Venta','ventaController@cargarDatos' );
 
 Route::get('/Stock', function () {
     return view('stock');

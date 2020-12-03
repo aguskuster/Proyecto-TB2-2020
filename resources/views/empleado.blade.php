@@ -22,6 +22,7 @@
                 <th scope="col">Edad</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Email</th>
+                <th scope="col">Fecha Ing.</th>
                 <th scope="col">Modificar</th>
                 <th scope="col">Eliminar</th>
             </tr>
@@ -38,8 +39,9 @@
                     <td> {{ $e->edad }} </td>
                     <td> {{ $e->telefono }} </td>
                     <td> {{ $e->email }} </td>
-                    <td><a href="#"><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
-                    <td><a href="#"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
+                    <td> {{ $e->created_at }} </td>
+                    <td><a href="#"><i style="font-size:20px;margin-left:20px;" class="fas fa-edit"></i></a></td>
+                    <td><a href="#"><i style="font-size:20px;margin-left:20px;color:red;" class="fas fa-user-times"></i></a></td>
                 </tr>
 
             </tbody>

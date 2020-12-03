@@ -3,7 +3,11 @@
 
 <div class="container">
 
-   
+    @isset($empleadoCreado)
+
+    <script>alert("Empleado Creado")</script>
+    
+    @endisset
     <br><br>
     <h3 class="text-center">Agregar Empleado</h3>
 

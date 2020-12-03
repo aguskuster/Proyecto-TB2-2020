@@ -13,7 +13,17 @@ class VentaTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('venta_table', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('clienteRUT');
+            $table->string('clienteNombre');
+            $table->string('insumoNombre');
+            $table->string('insumoPrecio');
+            $table->string('insumoCantidad');
+            $table->string('empleadoNombre');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class VentaTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('venta_table');
     }
 }

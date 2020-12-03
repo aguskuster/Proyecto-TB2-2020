@@ -22,7 +22,8 @@
                 <th scope="col">Edad</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Email</th>
-                <th scope="col">Papelera</th>
+                <th scope="col">Modificar</th>
+                <th scope="col">Eliminar</th>
             </tr>
         </thead>
         
@@ -37,6 +38,7 @@
                     <td> {{ $e->edad }} </td>
                     <td> {{ $e->telefono }} </td>
                     <td> {{ $e->email }} </td>
+                    <td><a href="#">Modificar {{ $e->id }} </a></td>
                     <td><a href="#">Eliminar {{ $e->id }} </a></td>
                 </tr>
 

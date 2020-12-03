@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label for="inputRUT">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Ingresesu Nombre" required>
+            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Ingrese Nombre" required>
         </div>
 
         <div class="form-group">

@@ -21,7 +21,8 @@
                 <th scope="col">Empresa</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Email</th>
-                <th scope="col">Papelera</th>
+                <th scope="col">Modificar</th>
+                <th scope="col">Eliminar</th>
             </tr>
         </thead>
 
@@ -35,6 +36,8 @@
                     <td> {{ $c->empresa }} </td>
                     <td> {{ $c->telefono }} </td>
                     <td> {{ $c->email }} </td>
+                    <td><a href="#">Eliminar {{ $c->id }} </a></td>
+                    <td><a href="#">Modificar {{ $c->id }} </a></td>
                     <td><a href="#">Eliminar {{ $c->id }} </a></td>
                 </tr>
 

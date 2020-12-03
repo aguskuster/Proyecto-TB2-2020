@@ -13,7 +13,16 @@ class InsumosTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('insumos_table', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('marca');
+            $table->string('categoria');
+            $table->string('nombre');
+            $table->string('precio');
+            $table->string('moneda');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class InsumosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('insumos_table');
     }
 }

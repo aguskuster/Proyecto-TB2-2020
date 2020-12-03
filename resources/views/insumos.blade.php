@@ -28,7 +28,7 @@
             </tr>
         </thead>
 
-        {{-- @if ($insumos)
+        @if ($insumos)
         @foreach ($insumos as $i)
 
             <tbody>
@@ -37,7 +37,7 @@
                     <td> {{ $i->categoria }} </td>
                     <td> {{ $i->nombre }} </td>
                     <td> {{ $i->precio }} </td>
-                    <td> USD </td>
+                    <td> {{ $i->moneda }} </td>
                     <td><a href="#"><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
                     <td><a href="#"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
                 </tr>
@@ -46,7 +46,7 @@
 
         @endforeach
         
-        @endif --}}
+        @endif
 
 
     </table>

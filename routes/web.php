@@ -23,9 +23,7 @@ Route::get('/Cliente','clienteController@listarClientes');
 
 Route::get('/Empleado','empleadoController@listarEmpleados' );
 
-Route::get('/Insumos', function () {
-    return view('insumos');
-});
+Route::get('/Insumos','insumosController@listarInsumos' );
 
 Route::get('/Compra', function () {
     return view('compra');
@@ -55,6 +53,8 @@ Route::get('/altaEmpleado', function () {
 Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
 
 
+
 Route::get('/altaInsumo', function () {
     return view('formularios/altaInsumo');
 });
+Route::post('/altaInsumo', 'insumosController@altaInsumo');

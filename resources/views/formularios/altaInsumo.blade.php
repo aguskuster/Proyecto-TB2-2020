@@ -3,48 +3,47 @@
 
 <div class="container">
 
-    @isset($empleadoCreado)
+    @isset($insumoAgregado)
 
-    <script>alert("Empleado Creado")</script>
-    
+        <script>
+            alert("Insumo Agregado")
+
+        </script>
+
     @endisset
     <br><br>
-    <h3 class="text-center">Agregar Empleado</h3>
+    <h3 class="text-center">Agregar Insumo</h3>
 
-    <form action="/altaEmpleado" method="post" class="needs-validation">
+    <form action="/altaInsumo" method="post" class="needs-validation">
 
         @csrf
         <div class="form-group">
-            <label for="inputRUT">Cedula</label>
-            <input type="text" class="form-control" name="ci" id="inputCedula" placeholder="Ingrese Cedula" required>
+            <label for="inputMarca">Marca</label>
+            <input type="text" class="form-control" name="marca" id="inputMarca" placeholder="Ingrese Marca" required>
         </div>
         <div class="form-group">
-            <label for="inputRUT">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Ingrese Nombre" required>
+            <label for="inputCategoria">Categoria</label>
+            <input type="text" class="form-control" name="categoria" id="inputCategoria" placeholder="Ingrese Categoria"
+                required>
         </div>
 
         <div class="form-group">
-            <label for="inputRUT">Apellido</label>
-            <input type="text" class="form-control" name="apellido" id="inputApellido" placeholder="Ingrese Apellido" required>
+            <label for="inputNombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Ingrese Nombre"
+                required>
         </div>
 
         <div class="form-group">
-            <label for="inputEmpresaNombre">Edad</label>
-            <input type="text" class="form-control" name="edad" id="inputEdad"
-                placeholder="Ingrese Edad" required>
+            <label for="inputPrecio">Precio</label>
+            <input type="text" class="form-control" name="precio" id="inputPrecio" placeholder="Ingrese Precio"
+                required>
         </div>
 
         <div class="form-group">
-            <label for="inputTelefono">Telefono</label>
-            <input type="text" class="form-control" name="telefono" id="inputTelefono"
-                placeholder="Ingrese numero de telefono" required>
+            <label for="inputMoneda">Moneda</label>
+            <input type="text" class="form-control" name="moneda" id="inputMoneda" value="USD"
+            required readonly>
         </div>
-
-        <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Ingrese Email" required>
-        </div>
-
 
         <button type="submit" class="btn btn-info">Agregar</button>
     </form>

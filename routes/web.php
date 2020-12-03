@@ -23,7 +23,9 @@ Route::get('/Cliente','clienteController@listarClientes');
 
 Route::get('/Empleado','empleadoController@listarEmpleados' );
 
-
+Route::get('/Insumos', function () {
+    return view('insumos');
+});
 
 Route::get('/Compra', function () {
     return view('compra');
@@ -43,11 +45,16 @@ Route::get('/Stock', function () {
 Route::get('/altaCliente', function () {
     return view('formularios/altaCliente');
 });
-
 Route::post('/altaCliente','clienteController@altaCliente');
+
+
 
 Route::get('/altaEmpleado', function () {
     return view('formularios/altaEmpleado');
 });
-
 Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
+
+
+Route::get('/altaInsumo', function () {
+    return view('formularios/altaInsumo');
+});

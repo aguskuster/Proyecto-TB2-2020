@@ -36,7 +36,6 @@
                     <td> {{ $c->empresa }} </td>
                     <td> {{ $c->telefono }} </td>
                     <td> {{ $c->email }} </td>
-                    <td><a href="#">Eliminar {{ $c->id }} </a></td>
                     <td><a href="#">Modificar {{ $c->id }} </a></td>
                     <td><a href="#">Eliminar {{ $c->id }} </a></td>
                 </tr>

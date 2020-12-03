@@ -46,7 +46,7 @@
                 </li>
              
                 <li class="nav-item">
-                    <a class="nav-link" href="/Insumo">Stock</a>
+                    <a class="nav-link" href="/Stock">Stock</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Compra">Compras</a>

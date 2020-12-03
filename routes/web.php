@@ -33,8 +33,8 @@ Route::get('/Venta', function () {
     return view('venta');
 });
 
-Route::get('/Insumo', function () {
-    return view('insumo');
+Route::get('/Stock', function () {
+    return view('stock');
 });
 
 

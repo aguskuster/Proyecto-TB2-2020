@@ -31,7 +31,7 @@
 
             <tbody>
                 <tr>
-                    <th scope="row"> {{ $e->CI }} </th>
+                    <th scope="row"> {{ $e->ci }} </th>
                     <td> {{ $e->nombre }} </td>
                     <td> {{ $e->apellido }} </td>
                     <td> {{ $e->edad }} </td>

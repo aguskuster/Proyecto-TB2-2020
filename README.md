@@ -1,20 +1,3 @@
-# Correr Local
-
-Requerimientos: 
-- PHP >= 7.4 (configurado para correr desde terminal/cmd)
-- Composer
-
-Ejecutar en terminal:
-`# Instalar dependencias de Composer
-composer install` 
-
-`# Generar keys de laravel
-php artisan keys:generate` 
-
-`# Correr migraciones
-php artisan migrate `
-
-
 
 `# Ejecutar servidor local
 php artisan serve`
@@ -67,4 +50,3 @@ Comandos php artisan make:
 
 
 ` # php artisan serve`
-Prueba

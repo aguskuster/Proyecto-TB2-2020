@@ -12,7 +12,7 @@
     
    
     <br><br>
-    <h3 class="text-center">Modificar cliente</h3>
+    <h3 class="text-center">Modificar Cliente</h3>
 
     <form action="/modificarCliente" method="post" class="needs-validation">
 

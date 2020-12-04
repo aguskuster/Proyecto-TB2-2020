@@ -71,3 +71,8 @@ Route::post('/modificarCliente', 'clienteController@modificarCliente');
 
 Route::get('/modificarCliente/{id}', 'clienteController@listarClienteParaModificar');
 
+
+
+Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado');
+
+Route::get('/modificarEmpleado/{id}', 'empleadoController@listarEmpleadoParaModificar');

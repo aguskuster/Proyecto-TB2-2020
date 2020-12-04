@@ -40,7 +40,7 @@
                     <td> {{ $e->telefono }} </td>
                     <td> {{ $e->email }} </td>
                     <td> {{ $e->created_at }} </td>
-                    <td><a href="#"><i style="font-size:20px;margin-left:20px;" class="fas fa-edit"></i></a></td>
+                    <td><a href="/modificarEmpleado/{{ $e->id }}"><i style="font-size:20px;margin-left:20px;" class="fas fa-edit"></i></a></td>
                     <td><a href="#"><i style="font-size:20px;margin-left:20px;color:red;" class="fas fa-user-times"></i></a></td>
                 </tr>
 

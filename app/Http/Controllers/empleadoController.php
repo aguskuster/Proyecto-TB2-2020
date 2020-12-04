@@ -33,4 +33,37 @@ class empleadoController extends Controller
 
         return view('empleado', ['empleados' => $empleados]);
     }
+
+
+
+    public function listarEmpleado () {
+        $empleado = empleadoModel::all();
+
+        return view('empleado', ['empleado' => $empleado]);
+    }
+
+    public function modificarEmpleado(Request $request){
+        $e = empleadoModel::find($request->input('id'));
+
+        $e->nombre = $request->input('nombre');
+        $e->apellido = $request->input('apellido');
+        $e->edad = $request->input('edad');
+        $e->telefono = $request->input('telefono');
+        $e->email = $request->input('email');
+
+        $e->save();
+        
+        $empleado = empleadoModel::all();
+        
+        
+
+        return view('empleado',['empleados' => $empleado]);
+
+
+    }
+
+    public function listarEmpleadoParaModificar( $id){
+        $empleado = empleadoModel::where('id',$id)->first();
+        return view('formulariosModificar/modificarEmpleado', ['empleadoSeleccionado' => $empleado]);
+    }
 }

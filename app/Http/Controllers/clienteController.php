@@ -42,7 +42,7 @@ class clienteController extends Controller
         $p->email = $request->input('email');
 
         $p->save();
-        
+
         $clientes = clienteModel::all();
         
         
@@ -52,7 +52,7 @@ class clienteController extends Controller
 
     }
 
-    public function listarClienteParaModificar( $id){
+    public function listarClienteParaModificar($id){
         $cliente = clienteModel::where('id',$id)->first();
         return view('formulariosModificar/modificarCliente', ['clienteSeleccionado' => $cliente]);
     }

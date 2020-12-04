@@ -78,6 +78,11 @@ Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado');
 Route::get('/modificarEmpleado/{id}', 'empleadoController@listarEmpleadoParaModificar');
 
 
+Route::post('/modificarInsumo', 'insumosController@modificarInsumo');
+
+Route::get('/modificarInsumo/{id}', 'insumosController@listarInsumoParaModificar');
+
+
 
 
 

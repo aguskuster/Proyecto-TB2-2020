@@ -33,9 +33,40 @@ class insumosController extends Controller
 
 
 
+
+    public function modificarInsumo(Request $request){
+        $i = insumosModel::find($request->input('id'));
+
+        $i->marca = $request->input('marca');
+        $i->categoria = $request->input('categoria');
+        $i->nombre = $request->input('nombre');
+        $i->precio = $request->input('precio');
+        $i->moneda = $request->input('moneda');
+        $i->save();
+
+        $insumos = insumosModel::all();
+        
+        
+
+        return view('insumos',['insumos' => $insumos]);
+
+
+    }
+
+    public function listarInsumoParaModificar($id){
+        $insumos = insumosModel::where('id',$id)->first();
+        return view('formulariosModificar/modificarInsumo', ['InsumoSeleccionadoModificar' => $insumos]);
+    }
+
+
+
+
+
+
+
     public function listarInsumoParaEliminar($id){
         $insumos = insumosModel::where('id',$id)->first();
-        return view('formulariosBaja/bajaInsumo', ['InsumoSeleccionadoEliminar' => $insumos]);
+        return view('formulariosBaja/modificarInsumo', ['InsumoSeleccionadoEliminar' => $insumos]);
     }
 
 

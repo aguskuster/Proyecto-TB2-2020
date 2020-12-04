@@ -39,21 +39,21 @@ Route::get('/Stock', function () {
 // FORMULARIOS 
 
 Route::get('/altaCliente', function () {
-    return view('formularios/altaCliente');
+    return view('formulariosAlta/altaCliente');
 });
 Route::post('/altaCliente','clienteController@altaCliente');
 
 
 
 Route::get('/altaEmpleado', function () {
-    return view('formularios/altaEmpleado');
+    return view('formulariosAlta/altaEmpleado');
 });
 Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
 
 
 
 Route::get('/altaInsumo', function () {
-    return view('formularios/altaInsumo');
+    return view('formulariosAlta/altaInsumo');
 });
 Route::post('/altaInsumo', 'insumosController@altaInsumo');
 

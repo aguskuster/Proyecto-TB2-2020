@@ -11,7 +11,7 @@
     <br><br>
 
     <a href="/altaCliente" style="text-decoration:none;"> <button type="button" style="border-radius:10px 10px 0px 0px;"
-            class="btn btn-success btn-lg btn-block">Agregar Cliente</button></a>
+            class="btn btn-success btn-lg btn-block" style="width:100%">Agregar Cliente</button></a>
 
 
 

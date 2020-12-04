@@ -23,7 +23,19 @@ class ventaController extends Controller
         
         $venta -> save();
 
-        return view('formulariosAlta/altaVenta', ['ventaAgregada' => $venta]);
+       
+        
+
+        return redirect('historialVenta');
+        
+    
+    }
+
+    public function listarHistorialVenta () {
+
+        $cargarVentas = ventaModel::all();
+        return view('historialVenta',['ventas' => $cargarVentas]);
+
     }
 
 

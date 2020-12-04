@@ -2,14 +2,7 @@
 
 <div class="container">
 
-    @isset($ventaCreada)
-
-        <script>
-            alert("Venta Creada")
-
-        </script>
-
-    @endisset
+   
 
     <br><br>
     <h3 class="text-center">Ventas de Insumos</h3>
@@ -23,11 +16,11 @@
 
             <div class="form-group">
                 <label for="selectClienteRut">Cliente RUT</label>
-                <select name="cliente" id="selectClienteRut" class="form-control">
+                <select name="selectClienteRut" id="selectClienteRut" class="form-control">
 
                     @foreach ($datos[2] as $c)
 
-                        <option>{{ $c->rut }}</option>
+                        <option value="{{ $c->rut }}">{{ $c->rut }}</option>
 
                     @endforeach
 
@@ -37,11 +30,11 @@
 
             <div class="form-group">
                 <label for="selectClienteNombre">Cliente Nombre</label>
-                <select name="cliente" id="selectClienteNombre" class="form-control">
+                <select name="selectClienteNombre" id="selectClienteNombre" class="form-control">
 
                     @foreach ($datos[2] as $c)
 
-                        <option>{{ $c->empresa }}</option>
+                        <option value="{{ $c->empresa }}">{{ $c->empresa }}</option>
 
                     @endforeach
 
@@ -51,11 +44,11 @@
 
             <div class="form-group">
                 <label for="selectProductoNombre">Nombre Producto</label>
-                <select name="productoNombre" id="selectProductoNombre" class="form-control">
+                <select name="selectProductoNombre" id="selectProductoNombre" class="form-control">
 
                     @foreach ($datos[0] as $p)
 
-                        <option>{{ $p->nombre }}</option>
+                        <option value="{{ $p->nombre }}"> {{ $p->nombre }} </option>
 
                     @endforeach
 
@@ -65,11 +58,11 @@
 
             <div class="form-group">
                 <label for="selectPrecioUnitario">Precio Unitario</label>
-                <select name="precioUnitarioInsumo" id="selectPrecioUnitario" class="form-control">
+                <select name="selectPrecioUnitario" id="selectPrecioUnitario" class="form-control">
 
                     @foreach ($datos[0] as $p)
 
-                        <option>{{ $p->precio }}</option>
+                        <option value="{{ $p->precio }}"> {{ $p->precio }} </option>
 
                     @endforeach
 
@@ -79,7 +72,7 @@
 
             <div class="form-group">
                 <label for="selectProductoCantidad">Cantidad</label>
-                <input type="text" class="form-control" name="cantidad" id="selectProductoCantidad" value="1"
+                <input type="text" class="form-control" name="selectProductoCantidad" id="selectProductoCantidad" value="1"
                     required>
             </div>
 
@@ -87,11 +80,11 @@
 
             <div class="form-group">
                 <label for="selectVendedor">Vendedor</label>
-                <select name="vendedor" id="selectVendedor" class="form-control">
+                <select name="selectVendedor" id="selectVendedor" class="form-control">
 
                     @foreach ($datos[1] as $e)
 
-                        <option>{{ $e->nombre }} {{ $e->apellido }}</option>
+                        <option value="{{ $e->nombre }} {{ $e->apellido }}">{{ $e->nombre }} {{ $e->apellido }}</option>
 
                     @endforeach
 
@@ -104,6 +97,10 @@
         </form>
 
     </div>
+
+    <br> 
+
+    <a href="historialVenta" class="float-right">Ver el historial de ventas</a>
 </div>
 
 

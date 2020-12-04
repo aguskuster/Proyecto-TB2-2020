@@ -30,4 +30,24 @@ class insumosController extends Controller
 
         return view('insumos', ['insumos' => $insumos]);
     }
+
+
+
+    public function listarInsumoParaEliminar($id){
+        $insumos = insumosModel::where('id',$id)->first();
+        return view('formulariosBaja/bajaInsumo', ['InsumoSeleccionadoEliminar' => $insumos]);
+    }
+
+
+    public function eliminarInsumo(Request $request){
+        $i = insumosModel::find($request->input('id'));
+        $i->delete();
+      
+        $insumos = insumosModel::all();
+
+        return view('insumos',['insumos' => $insumos]);
+
+    }
+
+
 }

@@ -22,6 +22,7 @@ class InsumosTable extends Migration
             $table->string('moneda');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
+            $table->softDeletes();
         });
     }
 

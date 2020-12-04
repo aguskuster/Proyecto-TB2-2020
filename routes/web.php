@@ -93,3 +93,8 @@ Route::get('/bajaCliente/{id}', 'clienteController@listarClienteParaEliminar') ;
 Route::post('/bajaEmpleado', 'empleadoController@eliminarEmpleado');
 
 Route::get('/bajaEmpleado/{id}', 'empleadoController@listarEmpleadoParaEliminar') ;
+
+
+Route::post('/bajaInsumo', 'insumosController@eliminarInsumo');
+
+Route::get('/bajaInsumo/{id}', 'insumosController@listarInsumoParaEliminar') ;

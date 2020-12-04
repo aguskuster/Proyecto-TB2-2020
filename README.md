@@ -67,3 +67,4 @@ Comandos php artisan make:
 
 
 ` # php artisan serve`
+Prueba

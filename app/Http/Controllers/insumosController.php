@@ -21,7 +21,7 @@ class insumosController extends Controller
         $insumo -> save();
 
         
-        return view('formularios/altaInsumo', ['insumoAgregado' => $insumo]);
+        return view('formulariosAlta/altaInsumo', ['insumoAgregado' => $insumo]);
        
     }
 

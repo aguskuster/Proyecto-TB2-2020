@@ -15,32 +15,36 @@
     <h3 class="text-center">Ventas de Insumos</h3>
     <br><br><br>
 
-    <div class="container" style="background:whitesmoke;padding:10px;">
+    <div class="container" style="background:whitesmoke;padding:10px;border-radius:10px;">
 
         <form action="/altaVenta" method="post" class="needs-validation">
 
             @csrf
 
             <div class="form-group">
-                <label for="selectCliente">Cliente</label>
-                <select name="cliente" id="selectCliente" class="form-control">
+                <label for="selectClienteRut">Cliente RUT</label>
+                <select name="cliente" id="selectClienteRut" class="form-control">
 
                     @foreach ($datos[2] as $c)
+
                         <option>{{ $c->rut }}</option>
 
                     @endforeach
+
                 </select>
 
             </div>
 
             <div class="form-group">
-                <label for="selectCliente">Cliente</label>
-                <select name="cliente" id="selectCliente" class="form-control">
+                <label for="selectClienteNombre">Cliente Nombre</label>
+                <select name="cliente" id="selectClienteNombre" class="form-control">
 
                     @foreach ($datos[2] as $c)
+
                         <option>{{ $c->empresa }}</option>
 
                     @endforeach
+
                 </select>
 
             </div>
@@ -50,9 +54,11 @@
                 <select name="productoNombre" id="selectProductoNombre" class="form-control">
 
                     @foreach ($datos[0] as $p)
+
                         <option>{{ $p->nombre }}</option>
 
                     @endforeach
+
                 </select>
 
             </div>
@@ -66,13 +72,15 @@
                         <option>{{ $p->precio }}</option>
 
                     @endforeach
+
                 </select>
 
             </div>
 
             <div class="form-group">
                 <label for="selectProductoNombre">Nombre Producto</label>
-                <input type="text" class="form-control" name="cantidad" id="selectProductoNombre" placeholder="Cantidad" required>
+                <input type="text" class="form-control" name="cantidad" id="selectProductoNombre" placeholder="Cantidad"
+                    required>
             </div>
 
 
@@ -83,9 +91,10 @@
 
                     @foreach ($datos[1] as $e)
 
-
                         <option>{{ $e->nombre }} {{ $e->apellido }}</option>
+
                     @endforeach
+
                 </select>
 
             </div>

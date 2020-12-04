@@ -21,13 +21,13 @@ class ventaController extends Controller
     public function altaVenta (Request $request) {
         $venta = new ventaModel;
 
-        $empleado -> ci = $request->input('ci');
-        $empleado -> nombre = $request->input('nombre');
-        $empleado -> apellido = $request->input('apellido');
-        $empleado -> edad = $request->input('edad');
-        $empleado -> email = $request->input('email');
-        $empleado -> telefono = $request->input('telefono');
+        $venta -> ci = $request->input('ci');
+        $venta -> nombre = $request->input('nombre');
+        $venta -> apellido = $request->input('apellido');
+        $venta -> edad = $request->input('edad');
+        $venta -> email = $request->input('email');
+        $venta -> telefono = $request->input('telefono');
         
-        $empleado -> save();
+        $venta -> save();
     }
 }

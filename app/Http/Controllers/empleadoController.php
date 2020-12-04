@@ -22,7 +22,7 @@ class empleadoController extends Controller
         $empleado -> save();
 
         
-        return view('formularios/altaEmpleado', ['empleadoCreado' => $empleado]);
+        return view('formulariosAlta/altaEmpleado', ['empleadoCreado' => $empleado]);
        
     }
 

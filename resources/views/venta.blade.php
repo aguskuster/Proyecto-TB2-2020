@@ -2,10 +2,10 @@
 
 <div class="container">
 
-    @isset($compraCreada)
+    @isset($ventaCreada)
 
         <script>
-            alert("Cliente Creado")
+            alert("Venta Creada")
 
         </script>
 
@@ -78,8 +78,8 @@
             </div>
 
             <div class="form-group">
-                <label for="selectProductoNombre">Nombre Producto</label>
-                <input type="text" class="form-control" name="cantidad" id="selectProductoNombre" placeholder="Cantidad"
+                <label for="selectProductoCantidad">Cantidad</label>
+                <input type="text" class="form-control" name="cantidad" id="selectProductoCantidad" placeholder="Cantidad"
                     required>
             </div>
 

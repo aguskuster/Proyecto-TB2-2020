@@ -1,8 +1,3 @@
-
-`# Ejecutar servidor local
-php artisan serve`
-
-
 # Ejecutar con Docker
 
 Requermientos:

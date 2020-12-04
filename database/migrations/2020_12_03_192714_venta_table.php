@@ -23,6 +23,7 @@ class VentaTable extends Migration
             $table->string('empleadoNombre');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
+            $table->softDeletes();
         });
     }
 

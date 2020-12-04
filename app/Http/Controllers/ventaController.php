@@ -49,4 +49,24 @@ class ventaController extends Controller
 
         return view('venta',['datos' => $datos]);
     }
+
+
+
+    public function listarVentaParaEliminar($id){
+        $venta = ventaModel::where('id',$id)->first();
+        return view('formulariosBaja/bajaVenta', ['ventaSeleccionadoEliminar' => $venta]);
+    }
+
+
+    public function eliminarVenta(Request $request){
+        $v = ventaModel::find($request->input('id'));
+        $v->delete();
+      
+        $venta = ventaModel::all();
+
+        return view('venta',['datos' => $venta]);
+
+    }
+
+
 }

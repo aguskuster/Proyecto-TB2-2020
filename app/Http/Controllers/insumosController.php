@@ -66,7 +66,7 @@ class insumosController extends Controller
 
     public function listarInsumoParaEliminar($id){
         $insumos = insumosModel::where('id',$id)->first();
-        return view('formulariosBaja/modificarInsumo', ['InsumoSeleccionadoEliminar' => $insumos]);
+        return view('formulariosBaja/bajaInsumo', ['InsumoSeleccionadoEliminar' => $insumos]);
     }
 
 

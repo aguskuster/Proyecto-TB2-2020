@@ -1,7 +1,8 @@
+# Miro y Trello
 
-`# Ejecutar servidor local
-php artisan serve`
+https://miro.com/welcomeonboard/CLoc2tHiWjiWMcKf2AnsV1IVcT40jLZUrUpva7GrrEIAdzn1jh8CbTPomJnr3WrF
 
+https://trello.com/invite/b/nQ9tEBMG/250b251aee97de81ccf66c5c06ab2553/proyecto-2020
 
 # Ejecutar con Docker
 

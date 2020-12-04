@@ -79,7 +79,7 @@
 
             <div class="form-group">
                 <label for="selectProductoCantidad">Cantidad</label>
-                <input type="text" class="form-control" name="cantidad" id="selectProductoCantidad" placeholder="Cantidad"
+                <input type="text" class="form-control" name="cantidad" id="selectProductoCantidad" value="1"
                     required>
             </div>
 

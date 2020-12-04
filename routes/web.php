@@ -63,6 +63,7 @@ Route::post('/altaInsumo', 'insumosController@altaInsumo');
 
 Route::post('/altaVenta', 'ventaController@altaVenta');
 
+Route::get('/historialVenta', 'ventaController@listarHistorialVenta');
 
 // FORMULARIOS Modificar
 

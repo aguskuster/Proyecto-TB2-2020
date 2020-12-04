@@ -29,7 +29,7 @@ Route::get('/Compra', function () {
     return view('compra');
 });
 
-Route::get('/Venta','ventaController@cargarDatos' );
+Route::get('/Venta','ventaController@cargarDatosVenta' );
 
 Route::get('/Stock', function () {
     return view('stock');
@@ -56,3 +56,7 @@ Route::get('/altaInsumo', function () {
     return view('formularios/altaInsumo');
 });
 Route::post('/altaInsumo', 'insumosController@altaInsumo');
+
+
+
+Route::post('/altaVenta', 'ventaController@altaVenta');

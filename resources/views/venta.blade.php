@@ -84,7 +84,7 @@
                     @foreach ($datos[1] as $e)
 
 
-                        <option>{{ $e->nombre }}</option>
+                        <option>{{ $e->nombre }} {{ $e->apellido }}</option>
                     @endforeach
                 </select>
 

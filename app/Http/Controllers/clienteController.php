@@ -33,5 +33,28 @@ class clienteController extends Controller
     }
 
 
+    public function modificarCliente(Request $request){
+        $p = clienteModel::find($request->input('id'));
+
+        $p->rut = $request->input('rut');
+        $p->empresa = $request->input('empresa');
+        $p->telefono = $request->input('telefono');
+        $p->email = $request->input('email');
+
+        $p->save();
+        
+        $clientes = clienteModel::all();
+        
+        
+
+        return view('cliente',['clientes' => $clientes]);
+
+
+    }
+
+    public function listarClienteParaModificar( $id){
+        $cliente = clienteModel::where('id',$id)->first();
+        return view('formulariosModificar/modificarCliente', ['clienteSeleccionado' => $cliente]);
+    }
     
 }

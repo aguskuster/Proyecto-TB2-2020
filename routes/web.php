@@ -63,15 +63,11 @@ Route::post('/altaInsumo', 'insumosController@altaInsumo');
 
 Route::post('/altaVenta', 'ventaController@altaVenta');
 
-// FORMULARIOS Modificar
 
+// FORMULARIOS Modificar
 
 
 Route::post('/modificarCliente', 'clienteController@modificarCliente');
 
+Route::get('/modificarCliente/{id}', 'clienteController@listarClienteParaModificar');
 
-
-
-Route::get('/modificarCliente/{id}', function () {
-    return view('formulariosModificar/modificarCliente');
-});

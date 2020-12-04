@@ -1,46 +1,54 @@
 @include('templates/header')
 
 
+
+
+
 <div class="container">
 
-    @isset($clienteCreado)
+    @isset($clienteSeleccionado)
 
-    <script>alert("Cliente Creado")</script>
     
-    @endisset
+    
+   
     <br><br>
-    <h3 class="text-center">Modicar cliente</h3>
+    <h3 class="text-center">Modificar cliente</h3>
 
-    <form action="/altaCliente" method="post" class="needs-validation">
+    <form action="/modificarCliente" method="post" class="needs-validation">
 
         @csrf
 
         <div class="form-group">
+            <label for="inputID">ID</label>
+            <input id="inputID" type="text" class="form-control" name="id" value="{{ $clienteSeleccionado -> id }} " readonly>
+        </div>
+
+        <div class="form-group">
             <label for="inputRUT">RUT</label>
-            <input type="text" class="form-control" name="rut" id="inputRUT" placeholder="Ingrese RUT" required>
+            <input type="text" class="form-control" name="rut" id="inputRUT" value="{{ $clienteSeleccionado -> rut }}" required>
         </div>
 
         <div class="form-group">
             <label for="inputEmpresaNombre">Empresa</label>
             <input type="text" class="form-control" name="empresa" id="inputEmpresaNombre"
-                placeholder="Ingrese nombre de la empresa" required>
+            value="{{ $clienteSeleccionado -> empresa }}" required>
         </div>
 
         <div class="form-group">
             <label for="inputTelefono">Telefono</label>
             <input type="text" class="form-control" name="telefono" id="inputTelefono"
-                placeholder="Ingrese numero de telefono" required>
+            value="{{ $clienteSeleccionado -> telefono }}" required>
         </div>
 
         <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
+            <input type="email" class="form-control" name="email" id="inputEmail" value="{{ $clienteSeleccionado -> email }}" required>
         </div>
 
 
-        <button type="submit" class="btn btn-info">Agregar</button>
+        <button type="submit" class="btn btn-info">Modificar Cliente</button>
     </form>
-
+    @endisset
 </div>
 
 @include('templates/footer')

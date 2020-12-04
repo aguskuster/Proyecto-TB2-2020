@@ -88,3 +88,8 @@ Route::get('/modificarEmpleado/{id}', 'empleadoController@listarEmpleadoParaModi
 Route::post('/bajaCliente', 'clienteController@eliminarCliente');
 
 Route::get('/bajaCliente/{id}', 'clienteController@listarClienteParaEliminar') ;
+
+
+Route::post('/bajaEmpleado', 'empleadoController@eliminarEmpleado');
+
+Route::get('/bajaEmpleado/{id}', 'empleadoController@listarEmpleadoParaEliminar') ;

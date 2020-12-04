@@ -58,12 +58,6 @@ class clienteController extends Controller
     }
  
     
-
-
-
-
-
-
     public function listarClienteParaEliminar($id){
         $cliente = clienteModel::where('id',$id)->first();
         return view('formulariosBaja/bajaCliente', ['clienteSeleccionadoEliminar' => $cliente]);
@@ -74,20 +68,10 @@ class clienteController extends Controller
         $c = clienteModel::find($request->input('id'));
         $c->delete();
       
-        
-
-
         $clientes = clienteModel::all();
-        
-        
 
         return view('cliente',['clientes' => $clientes]);
 
-
-
-
     }
-
-
 
 }

@@ -25,24 +25,24 @@
 
         <div class="form-group">
             <label for="inputRUT">RUT</label>
-            <input type="text" class="form-control" name="rut" id="inputRUT" value="{{ $clienteSeleccionadoEliminar -> rut }}" required readonly>
+            <input type="text" class="form-control" name="rut" id="inputRUT" value="{{ $clienteSeleccionadoEliminar -> rut }}"  readonly>
         </div>
 
         <div class="form-group">
             <label for="inputEmpresaNombre">Empresa</label>
             <input type="text" class="form-control" name="empresa" id="inputEmpresaNombre"
-            value="{{ $clienteSeleccionadoEliminar -> empresa }}" required readonly>
+            value="{{ $clienteSeleccionadoEliminar -> empresa }}"  readonly>
         </div>
 
         <div class="form-group">
             <label for="inputTelefono">Telefono</label>
             <input type="text" class="form-control" name="telefono" id="inputTelefono"
-            value="{{ $clienteSeleccionadoEliminar -> telefono }}" required readonly>
+            value="{{ $clienteSeleccionadoEliminar -> telefono }}"  readonly>
         </div>
 
         <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="email" id="inputEmail" value="{{ $clienteSeleccionadoEliminar -> email }}" required readonly>
+            <input type="email" class="form-control" name="email" id="inputEmail" value="{{ $clienteSeleccionadoEliminar -> email }}"  readonly>
         </div>
 
 

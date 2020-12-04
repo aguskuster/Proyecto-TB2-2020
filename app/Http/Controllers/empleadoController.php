@@ -73,19 +73,20 @@ class empleadoController extends Controller
 
 
 
-
-    public function listarPersonaParaEliminar($id){
-        $persona = PersonaModel::where('id',$id)->first();
-        return view('baja', ['persona' => $persona]);
+    public function listarEmpleadoParaEliminar($id){
+        $empleado = empleadoModel::where('id',$id)->first();
+        return view('formulariosBaja/bajaEmpleado', ['EmpleadoSeleccionadoEliminar' => $empleado]);
     }
 
-    public function eliminarPersona(Request $request){
-        $p = PersonaModel::find($request->input('id'));
-        $p->delete();
-        $eliminado = $request->input('id');
-        
-        return view('baja',['eliminado' => $eliminado]);
-        
+
+    public function eliminarEmpleado(Request $request){
+        $e = empleadoModel::find($request->input('id'));
+        $e->delete();
+      
+        $empleado = empleadoModel::all();
+
+        return view('empleado',['empleados' => $empleado]);
+
     }
 
 

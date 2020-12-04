@@ -31,6 +31,8 @@ Route::get('/Compra', function () {
 
 Route::get('/Venta','ventaController@cargarDatosVenta' );
 
+Route::get('/historialVenta', 'ventaController@listarHistorialVenta');
+
 Route::get('/Stock', function () {
     return view('stock');
 });
@@ -63,7 +65,7 @@ Route::post('/altaInsumo', 'insumosController@altaInsumo');
 
 Route::post('/altaVenta', 'ventaController@altaVenta');
 
-Route::get('/historialVenta', 'ventaController@listarHistorialVenta');
+
 
 // FORMULARIOS Modificar
 

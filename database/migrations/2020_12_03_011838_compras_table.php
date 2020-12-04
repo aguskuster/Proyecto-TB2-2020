@@ -13,7 +13,19 @@ class ComprasTable extends Migration
      */
     public function up()
     {
-      
+        Schema::create('compra_table', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('rutProveedor');
+            $table->string('proveedor');
+            $table->string('categoria');
+            $table->string('nombreProducto');
+            $table->string('precioUnitario');
+            $table->string('moneda');
+            $table->string('empleado');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -23,6 +35,6 @@ class ComprasTable extends Migration
      */
     public function down()
     {
-        
+        Schema::dropIfExists('compra_table');
     }
 }

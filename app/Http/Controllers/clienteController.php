@@ -56,5 +56,38 @@ class clienteController extends Controller
         $cliente = clienteModel::where('id',$id)->first();
         return view('formulariosModificar/modificarCliente', ['clienteSeleccionado' => $cliente]);
     }
+ 
     
+
+
+
+
+
+
+    public function listarClienteParaEliminar($id){
+        $cliente = clienteModel::where('id',$id)->first();
+        return view('formulariosBaja/bajaCliente', ['clienteSeleccionadoEliminar' => $cliente]);
+    }
+
+
+    public function eliminarCliente(Request $request){
+        $c = clienteModel::find($request->input('id'));
+        $c->delete();
+      
+        
+
+
+        $clientes = clienteModel::all();
+        
+        
+
+        return view('cliente',['clientes' => $clientes]);
+
+
+
+
+    }
+
+
+
 }

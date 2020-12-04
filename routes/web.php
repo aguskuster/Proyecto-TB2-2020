@@ -76,3 +76,15 @@ Route::get('/modificarCliente/{id}', 'clienteController@listarClienteParaModific
 Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado');
 
 Route::get('/modificarEmpleado/{id}', 'empleadoController@listarEmpleadoParaModificar');
+
+
+
+
+
+
+
+// FORMULARIOS Baja
+
+Route::post('/bajaCliente', 'clienteController@eliminarCliente');
+
+Route::get('/bajaCliente/{id}', 'clienteController@listarClienteParaEliminar') ;

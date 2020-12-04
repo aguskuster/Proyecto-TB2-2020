@@ -20,7 +20,7 @@ class clienteController extends Controller
         $cliente -> save();
 
         
-        return view('formularios/altaCliente', ['clienteCreado' => $cliente]);
+        return view('formulariosAlta/altaCliente', ['clienteCreado' => $cliente]);
        
     }
 
@@ -31,4 +31,7 @@ class clienteController extends Controller
 
         return view('cliente', ['clientes' => $clientes]);
     }
+
+
+    
 }

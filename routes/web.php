@@ -36,7 +36,7 @@ Route::get('/Stock', function () {
 });
 
 
-// FORMULARIOS 
+// FORMULARIOS Alta
 
 Route::get('/altaCliente', function () {
     return view('formulariosAlta/altaCliente');
@@ -48,6 +48,7 @@ Route::post('/altaCliente','clienteController@altaCliente');
 Route::get('/altaEmpleado', function () {
     return view('formulariosAlta/altaEmpleado');
 });
+
 Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
 
 
@@ -55,8 +56,22 @@ Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
 Route::get('/altaInsumo', function () {
     return view('formulariosAlta/altaInsumo');
 });
+
+
 Route::post('/altaInsumo', 'insumosController@altaInsumo');
 
 
-
 Route::post('/altaVenta', 'ventaController@altaVenta');
+
+// FORMULARIOS Modificar
+
+
+
+Route::post('/modificarCliente', 'clienteController@modificarCliente');
+
+
+
+
+Route::get('/modificarCliente/{id}', function () {
+    return view('formulariosModificar/modificarCliente');
+});

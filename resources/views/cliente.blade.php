@@ -1,5 +1,11 @@
 @include('templates/header')
 
+@isset($clienteModificado)
+
+<script>alert("Cliente Modificado")</script>
+
+@endisset
+
 
 <div class="container">
     <br><br><br>
@@ -36,7 +42,7 @@
                     <td> {{ $c->empresa }} </td>
                     <td> {{ $c->telefono }} </td>
                     <td> {{ $c->email }} </td>
-                    <td><a href="#"><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
+                    <td><a href="/modificarCliente/ {{$c->id }}" name='id'><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
                     <td><a href="#"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
                 </tr>
 

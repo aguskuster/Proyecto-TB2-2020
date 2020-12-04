@@ -8,9 +8,8 @@
     <script>alert("Cliente Creado")</script>
     
     @endisset
-    
     <br><br>
-    <h3 class="text-center">Agregar cliente</h3>
+    <h3 class="text-center">Modicar cliente</h3>
 
     <form action="/altaCliente" method="post" class="needs-validation">
 

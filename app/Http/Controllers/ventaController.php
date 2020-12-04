@@ -51,6 +51,32 @@ class ventaController extends Controller
     }
 
 
+    public function modificarVenta(Request $request){
+        $v = ventaModel::find($request->input('id'));
+
+        $v->clienteRUT = $request->input('clienteRUT');
+        $v->clienteNombre = $request->input('clienteNombre');
+        $v->insumoNombre = $request->input('insumoNombre');
+        $v->insumoPrecio = $request->input('insumoPrecio');
+        $v->insumoCantidad = $request->input('insumoCantidad');
+        $v->empleadoNombre = $request->input('empleadoNombre');
+
+        $v->save();
+        $resultado = self::listarHistorialVenta();
+        return $resultado;
+
+
+    }
+
+    public function listarVentaParaModificar($id){
+        $venta = ventaModel::where('id',$id)->first();
+        return view('formulariosModificar/modificarVenta', ['ventaSeleccionado' => $venta]);
+    }
+ 
+
+
+
+
 
     public function listarVentaParaEliminar($id){
         $venta = ventaModel::where('id',$id)->first();
@@ -62,9 +88,10 @@ class ventaController extends Controller
         $v = ventaModel::find($request->input('id'));
         $v->delete();
       
-        $venta = ventaModel::all();
+        
 
-        return view('venta',['datos' => $venta]);
+        $resultado = self::listarHistorialVenta();
+        return $resultado;
 
     }
 

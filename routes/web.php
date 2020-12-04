@@ -83,7 +83,9 @@ Route::post('/modificarInsumo', 'insumosController@modificarInsumo');
 
 Route::get('/modificarInsumo/{id}', 'insumosController@listarInsumoParaModificar');
 
+Route::post('/modificarVenta', 'ventaController@modificarVenta');
 
+Route::get('/modificarVenta/{id}', 'ventaController@listarVentaParaModificar');
 
 
 

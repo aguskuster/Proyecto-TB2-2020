@@ -51,4 +51,22 @@ class comprasController extends Controller
         return view('historialDeCompra',['compras' => $compra]);
 
     }
+
+
+
+    public function listarCompraParaEliminar($id){
+        $compra = comprasModel::where('id',$id)->first();
+        return view('formulariosBaja/bajaCompra', ['compraSeleccionadoEliminar' => $compra]);
+    }
+    
+    public function eliminarCompra(Request $request){
+        $i = comprasModel::find($request->input('id'));
+        $i->delete();
+      
+        
+
+        return redirect('historialDeCompra');
+
+    }
+
 }

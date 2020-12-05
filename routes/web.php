@@ -114,4 +114,9 @@ Route::get('/bajaInsumo/{id}', 'insumosController@listarInsumoParaEliminar') ;
 
 Route::post('/bajaVenta', 'ventaController@eliminarVenta');
 
-Route::get('/bajaVenta/{id}', 'ventaController@listarVentaParaEliminar') ;
+Route::get('/bajaVenta/{id}', 'ventaController@listarVentaParaEliminar');
+
+
+Route::post('/bajaCompra', 'comprasController@eliminarCompra');
+
+Route::get('/bajaCompra/{id}', 'comprasController@listarCompraParaEliminar') ;

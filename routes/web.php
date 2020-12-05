@@ -34,9 +34,9 @@ Route::get('/historialVenta', 'ventaController@listarHistorialVenta');
 
 Route::get('/historialDeCompra', 'comprasController@listarHistorialCompra');
 
-Route::get('/Stock', function () {
-    return view('stock');
-});
+Route::get('formulariosAlta/altaStock','stockController@listarStockParaHabilitar');
+
+Route::get('/Stock','stockController@listarStock');
 
 
 // FORMULARIOS Alta
@@ -67,6 +67,8 @@ Route::post('/altaInsumo', 'insumosController@altaInsumo');
 Route::post('/altaVenta', 'ventaController@altaVenta');
 
 Route::post('/altaCompra', 'comprasController@altaCompra');
+
+Route::post('/altaStock/{id}', 'stockController@altaStock');
 
 
 

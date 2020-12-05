@@ -1,16 +1,17 @@
 @include('templates/header')
 
 
-<div class="container">
-    <br><br>
-    
-    <h1 class="text-center">Listado de Stock</h1>
 
+<div class="container">
     <br><br><br>
 
+    <h1 class="text-center">Habilitar Stock</h1>
 
+    <br><br>
 
-    <a href="formulariosAlta/altaStock"><button class="btn btn-warning btn-lg btn-block">Habilitar Stock</button></a>
+    
+
+    <a href="/Stock" class="float-right"><i style="font-size:20px;margin-left:20px;color:blue;"class="fas fa-arrow-left" style="font-family:Roboto"> Volver Atras</i></a>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -21,14 +22,13 @@
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Modificar</th>
-                <th scope="col">Eliminar</th>
+                <th scope="col">Habilitar</th>
 
             </tr>
         </thead>
 
-        @if ($stockHabilitado)
-            @foreach ($stockHabilitado as $h)
+        @if ($habilitarStock)
+            @foreach ($habilitarStock as $h)
 
                 <tbody>
                     <tr>
@@ -38,8 +38,14 @@
                         <td> {{ $h->precioUnitario }} {{ $h->moneda }}</td>
                         <td> {{ $h->cantidad }} </td>
                         <td> {{ $h->created_at }} </td>
-                        <td><a href="/modificarStock/{{ $h->id }}"><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
-                        <td><a href="/bajaStock/{{ $h->id }}"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
+                        <td>
+                            <form action="/altaStock/{{ $h->id }}" method="post" name="id" id="id">
+                                <button type="submit" style="background:none;border:none;text-decoration:none;">
+                                    @csrf
+                                    <i style="font-size:20px;margin-left:20px;color:green;" class="fas fa-check"></i>
+                                </button>
+                            </form>
+                        </td>
 
                     </tr>
 
@@ -59,4 +65,5 @@
 
 
 </div>
+
 @include('templates/footer')

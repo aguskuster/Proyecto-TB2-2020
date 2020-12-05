@@ -26,6 +26,7 @@ class StockTable extends Migration
             $table->softDeletes();
         });
     }
+    
 
     /**
      * Reverse the migrations.

@@ -20,7 +20,7 @@ class comprasController extends Controller
         $compra -> moneda = $request->get('selectMoneda');
         $compra -> cantidad = $request->input('inputCantidad');
         $compra -> empleado = $request->get('selectVendedor');
-
+        $compra -> habilitado = false;
         $compra -> save();
 
        

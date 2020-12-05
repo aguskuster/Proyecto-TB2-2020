@@ -25,13 +25,14 @@ Route::get('/Empleado','empleadoController@listarEmpleados' );
 
 Route::get('/Insumos','insumosController@listarInsumos' );
 
-Route::get('/Compra', function () {
-    return view('compra');
-});
+Route::get('/Compra','comprasController@cargarDatosCompra' );
+
 
 Route::get('/Venta','ventaController@cargarDatosVenta' );
 
 Route::get('/historialVenta', 'ventaController@listarHistorialVenta');
+
+Route::get('/historialDeCompra', 'comprasController@listarHistorialCompra');
 
 Route::get('/Stock', function () {
     return view('stock');
@@ -64,6 +65,8 @@ Route::post('/altaInsumo', 'insumosController@altaInsumo');
 
 
 Route::post('/altaVenta', 'ventaController@altaVenta');
+
+Route::post('/altaCompra', 'comprasController@altaCompra');
 
 
 

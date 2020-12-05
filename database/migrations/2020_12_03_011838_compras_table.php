@@ -15,12 +15,12 @@ class ComprasTable extends Migration
     {
         Schema::create('compra_table', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('rutProveedor');
             $table->string('proveedor');
             $table->string('categoria');
             $table->string('nombreProducto');
             $table->string('precioUnitario');
             $table->string('moneda');
+            $table->string('cantidad');
             $table->string('empleado');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

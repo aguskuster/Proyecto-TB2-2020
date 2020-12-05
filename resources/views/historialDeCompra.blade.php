@@ -47,7 +47,7 @@
                     <td> {{ $c->cantidad }} </td>
                     <td> {{ $c->empleado }} </td>
                     <td> {{ $c->created_at }} </td>
-                    <td><a href="/modificarCompra/{{ $c->id }}" name='id'><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
+                    <td><a href="/modificarHisotrialCompra/{{ $c->id }}" name='id'><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
                     <td><a href="/bajaCompra/{{ $c->id }}"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
                 </tr>
 

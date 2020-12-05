@@ -69,4 +69,35 @@ class comprasController extends Controller
 
     }
 
+
+    
+    
+    public function modificarHistorialCompra(Request $request){
+        $i = comprasModel::find($request->input('id'));
+
+        $i->proveedor = $request->input('proveedor');
+        $i->categoria = $request->input('categoria');
+        $i->nombreProducto = $request->input('nombreProducto');
+        $i->precioUnitario = $request->input('precioUnitario');
+        $i->moneda = $request->input('moneda');
+        $i->cantidad = $request->input('cantidad');
+        $i->empleado = $request->input('empleado');
+
+        $i->save();
+        $resultado = self::listarHistorialCompra();
+        return $resultado;
+
+
+    }
+
+    public function listarHisotrialCompraParaModificar($id){
+        $historial = comprasModel::where('id',$id)->first();
+        return view('formulariosModificar/modificarHisotrialCompra', ['compraHistorial' => $historial]);
+    }
+ 
+
+
+
+
+
 }

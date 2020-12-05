@@ -95,6 +95,12 @@ Route::get('/modificarVenta/{id}', 'ventaController@listarVentaParaModificar');
 
 
 
+Route::get('/modificarHisotrialCompra/{id}', 'comprasController@listarHisotrialCompraParaModificar');
+Route::post('/modificarHisotrialCompra', 'comprasController@modificarHistorialCompra');
+
+
+
+
 
 // FORMULARIOS Baja
 

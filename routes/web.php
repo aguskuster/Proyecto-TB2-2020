@@ -105,24 +105,20 @@ Route::post('/modificarHisotrialCompra', 'comprasController@modificarHistorialCo
 // FORMULARIOS Baja
 
 Route::post('/bajaCliente', 'clienteController@eliminarCliente');
-
 Route::get('/bajaCliente/{id}', 'clienteController@listarClienteParaEliminar') ;
 
 
 Route::post('/bajaEmpleado', 'empleadoController@eliminarEmpleado');
-
 Route::get('/bajaEmpleado/{id}', 'empleadoController@listarEmpleadoParaEliminar') ;
 
 
 Route::post('/bajaInsumo', 'insumosController@eliminarInsumo');
-
 Route::get('/bajaInsumo/{id}', 'insumosController@listarInsumoParaEliminar') ;
 
-Route::post('/bajaVenta', 'ventaController@eliminarVenta');
 
+Route::post('/bajaVenta', 'ventaController@eliminarVenta');
 Route::get('/bajaVenta/{id}', 'ventaController@listarVentaParaEliminar');
 
 
 Route::post('/bajaCompra', 'comprasController@eliminarCompra');
-
 Route::get('/bajaCompra/{id}', 'comprasController@listarCompraParaEliminar') ;

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ComprasTable extends Migration
+class StockTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class ComprasTable extends Migration
      */
     public function up()
     {
-        Schema::create('compra_table', function (Blueprint $table) {
+        Schema::create('stock_table', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('proveedor');
             $table->string('categoria');
@@ -21,8 +21,6 @@ class ComprasTable extends Migration
             $table->string('precioUnitario');
             $table->string('moneda');
             $table->string('cantidad');
-            $table->string('empleado');
-            $table->boolean('habilitado');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->softDeletes();
@@ -36,6 +34,6 @@ class ComprasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compra_table');
+        Schema::dropIfExists('stock_table');
     }
 }

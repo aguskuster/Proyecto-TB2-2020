@@ -16,7 +16,7 @@
        
         @error('ci')
         <div class="alert alert-danger">
-            Cedula Incorrecta
+            Cedula invalido
         </div>
         @enderror
         <div class="form-group">
@@ -26,30 +26,32 @@
         @error('nombre')
        
         <div class="alert alert-danger">
-            Nombre Obligatorio
+            Nombre invalido
         </div>
 
         @enderror
         
         <div class="form-group">
             <label for="inputRUT">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="input-field" onkeypress="return isNumericKey(event)"  placeholder="Ingrese Nombre" value={{old ('nombre')}}>
+            <input type="text" class="form-control" name="nombre" id="input-field" onkeypress="return isNumericKey(event)"  
+            placeholder="Ingrese Nombre" value={{old ('nombre')}}>
         </div>
         @error('apellido')
        
         <div class="alert alert-danger">
-            Apellido Obligatorio
+            Apellido invalido
         </div>
 
         @enderror
         <div class="form-group">
             <label for="inputRUT">Apellido</label>
-            <input type="text" class="form-control" name="apellido" id="input-field" onkeypress="return isNumericKey(event)" placeholder="Ingrese Apellido"  value={{old ('apellido')}}>
+            <input type="text" class="form-control" name="apellido" id="input-field" onkeypress="return isNumericKey(event)" 
+            placeholder="Ingrese Apellido"  value={{old ('apellido')}}>
         </div>
         @error('edad')
        
         <div class="alert alert-danger">
-            Edad Obligatorio
+            Edad invalido
         </div>
 
         @enderror
@@ -62,19 +64,19 @@
         @error('telefono')
        
         <div class="alert alert-danger">
-            Telefono Obligatorio
+            Telefono Invalido
         </div>
 
         @enderror
         <div class="form-group">
             <label for="inputTelefono">Telefono</label>
-            <input type="number" class="form-control" minlength="8" maxlength="9" name="telefono" id="inputTelefono"
+            <input type="number" class="form-control"  name="telefono" id="inputTelefono"
                 placeholder="Ingrese numero de telefono" value={{old ('telefono')}}>
         </div>
         @error('email')
        
         <div class="alert alert-danger">
-            Email Obligatorio
+            Email invalido
         </div>
 
         @enderror

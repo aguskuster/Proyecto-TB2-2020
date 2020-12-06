@@ -19,7 +19,7 @@ class empleadoController extends Controller
             'nombre'=>'required',
             'apellido'=>'required',
             'edad'=>'required',
-            'telefono'=>'required',
+            'telefono'=>'required|min:8|max:9',
             'email'=>'required',
             
 

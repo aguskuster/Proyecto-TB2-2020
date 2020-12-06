@@ -23,7 +23,7 @@
 
         @enderror
         <div class="form-group">
-            <label for="inputRUT">RUT</label>
+            <label for="inputRUT">RUT <em>*</em></label>
             <input type="number" class="form-control" name="rut" id="inputRUT" placeholder="Ingrese RUT" value={{old ('rut')}}>
         </div>
         @error('empresa')
@@ -34,7 +34,7 @@
 
         @enderror
         <div class="form-group">
-            <label for="inputEmpresaNombre">Empresa</label>
+            <label for="inputEmpresaNombre">Empresa <em>*</em></label>
             <input type="text" class="form-control" name="empresa" id="inputEmpresaNombre" 
                 placeholder="Ingrese nombre de la empresa" onkeypress="return isNumericKey(event)" value={{old ('empresa')}}>
         </div>
@@ -46,7 +46,7 @@
 
         @enderror
         <div class="form-group">
-            <label for="inputTelefono">Telefono</label>
+            <label for="inputTelefono">Telefono <em>*</em></label>
             <input type="number" class="form-control" name="telefono" id="inputTelefono" 
             placeholder="Ingrese numero de telefono" value={{old ('telefono')}} >
         </div>
@@ -58,7 +58,7 @@
 
         @enderror
         <div class="form-group">
-            <label for="inputEmail">Email</label>
+            <label for="inputEmail">Email <em>*</em></label>
             <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" value={{old ('email')}}>
         </div>
 

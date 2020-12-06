@@ -20,7 +20,7 @@
         </div>
         @enderror
         <div class="form-group">
-            <label for="inputRUT">Cedula</label>
+            <label for="inputRUT">Cedula <em>*</em></label>
             <input type="number" class="form-control" name="ci" id="inputCedula" placeholder="Ingrese Cedula" value={{old ('ci')}} >
         </div>
         @error('nombre')
@@ -32,7 +32,7 @@
         @enderror
         
         <div class="form-group">
-            <label for="inputRUT">Nombre</label>
+            <label for="inputRUT">Nombre <em>*</em></label>
             <input type="text" class="form-control" name="nombre" id="input-field" onkeypress="return isNumericKey(event)"  
             placeholder="Ingrese Nombre" value={{old ('nombre')}}>
         </div>
@@ -44,7 +44,7 @@
 
         @enderror
         <div class="form-group">
-            <label for="inputRUT">Apellido</label>
+            <label for="inputRUT">Apellido <em>*</em></label>
             <input type="text" class="form-control" name="apellido" id="input-field" onkeypress="return isNumericKey(event)" 
             placeholder="Ingrese Apellido"  value={{old ('apellido')}}>
         </div>
@@ -57,7 +57,7 @@
         @enderror
 
         <div class="form-group">
-            <label for="inputEmpresaNombre">Edad</label>
+            <label for="inputEmpresaNombre">Edad <em>*</em></label>
             <input type="number"  min="16" max="100" class="form-control" name="edad" id="inputEdad"
                 placeholder="Ingrese Edad" value={{old ('edad')}}  >
         </div>
@@ -69,7 +69,7 @@
 
         @enderror
         <div class="form-group">
-            <label for="inputTelefono">Telefono</label>
+            <label for="inputTelefono">Telefono <em>*</em></label>
             <input type="number" class="form-control"  name="telefono" id="inputTelefono"
                 placeholder="Ingrese numero de telefono" value={{old ('telefono')}}>
         </div>
@@ -81,7 +81,7 @@
 
         @enderror
         <div class="form-group">
-            <label for="inputEmail">Email</label>
+            <label for="inputEmail">Email <em>*</em></label>
             <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Ingrese Email" value={{old ('email')}}>
         </div>
 

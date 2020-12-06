@@ -11,6 +11,7 @@ use App\comprasModel;
 class comprasController extends Controller
 {
     public function altaCompra  (Request $request) {
+       
         $compra = new comprasModel;
 
         $compra -> proveedor = $request->get('selectProveedor');
@@ -21,13 +22,9 @@ class comprasController extends Controller
         $compra -> cantidad = $request->input('inputCantidad');
         $compra -> empleado = $request->get('selectVendedor');
         $compra -> habilitado = false;
-        $compra -> save();
-
        
-        
-
+        $compra -> save();
         return redirect('historialDeCompra');
-        
     
     }
 

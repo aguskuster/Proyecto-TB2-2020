@@ -48,7 +48,7 @@
 
                     @foreach ($datos[0] as $p)
 
-                        <option value="{{ $p->nombre }}"> {{ $p->nombre }} </option>
+                        <option value="{{ $p->proveedor }}"> {{ $p->proveedor }} </option>
 
                     @endforeach
 
@@ -62,7 +62,7 @@
 
                     @foreach ($datos[0] as $p)
 
-                        <option value="{{ $p->precio }}"> {{ $p->precio }} </option>
+                        <option value="{{ $p->precioUnitario }} "> {{ $p->precioUnitario }} {{ $p->moneda }}</option>
 
                     @endforeach
 

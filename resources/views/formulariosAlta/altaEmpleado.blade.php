@@ -33,7 +33,7 @@
         
         <div class="form-group">
             <label for="inputRUT">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="Ingrese Nombre" value={{old ('nombre')}}>
+            <input type="text" class="form-control" name="nombre" id="input-field" onkeypress="return isNumericKey(event)"  placeholder="Ingrese Nombre" value={{old ('nombre')}}>
         </div>
         @error('apellido')
        
@@ -44,7 +44,7 @@
         @enderror
         <div class="form-group">
             <label for="inputRUT">Apellido</label>
-            <input type="text" class="form-control" name="apellido" id="inputApellido" placeholder="Ingrese Apellido"  value={{old ('apellido')}}>
+            <input type="text" class="form-control" name="apellido" id="input-field" onkeypress="return isNumericKey(event)" placeholder="Ingrese Apellido"  value={{old ('apellido')}}>
         </div>
         @error('edad')
        
@@ -56,8 +56,8 @@
 
         <div class="form-group">
             <label for="inputEmpresaNombre">Edad</label>
-            <input type="number" class="form-control" name="edad" id="inputEdad"
-                placeholder="Ingrese Edad" value={{old ('edad')}}>
+            <input type="number"  min="16" max="100" class="form-control" name="edad" id="inputEdad"
+                placeholder="Ingrese Edad" value={{old ('edad')}}  >
         </div>
         @error('telefono')
        
@@ -68,7 +68,7 @@
         @enderror
         <div class="form-group">
             <label for="inputTelefono">Telefono</label>
-            <input type="number" class="form-control" name="telefono" id="inputTelefono"
+            <input type="number" class="form-control" minlength="8" maxlength="9" name="telefono" id="inputTelefono"
                 placeholder="Ingrese numero de telefono" value={{old ('telefono')}}>
         </div>
         @error('email')

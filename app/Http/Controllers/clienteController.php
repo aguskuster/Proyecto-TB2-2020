@@ -23,7 +23,7 @@ class clienteController extends Controller
         $buscar = clienteModel::where('rut',$request->input('rut'))->first(); 
         
         if ($buscar){
-            echo "<script>alert('El rut ingresado esta repetida') </script>";
+            echo "<script>alert('El rut ingresado esta repetido') </script>";
             return view('formulariosAlta/altaCliente');
         } else {
 

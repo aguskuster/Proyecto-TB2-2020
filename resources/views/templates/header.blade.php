@@ -20,6 +20,9 @@
 
 
     <style>
+        em{
+            color:red;
+        }
         * {
             font-family: 'Roboto';
         }
@@ -45,7 +48,7 @@
     </style>
 </head>
 
-<body>
+<body onkeydown="javascript:Disable_Control_C()">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Insumos Inf.</a>

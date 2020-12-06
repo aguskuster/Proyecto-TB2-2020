@@ -6,9 +6,19 @@ use Illuminate\Http\Request;
 use App\clienteModel;
 class clienteController extends Controller
 {
-    
+    function validateAllInput(Request $request) {
+        return $request->validate([
+            'rut'=>'size:12|required',
+            'empresa'=>'required',
+            'telefono'=>'required|min:8|max:9',
+            'email'=>'required',
+        ]);
+       
+       }
+     
     
     public function altaCliente (Request $request){
+        self::validateAllInput($request);
 
         $cliente = new clienteModel;
 
@@ -34,6 +44,8 @@ class clienteController extends Controller
 
 
     public function modificarCliente(Request $request){
+
+        self::validateAllInput($request);
         $p = clienteModel::find($request->input('id'));
 
         $p->rut = $request->input('rut');

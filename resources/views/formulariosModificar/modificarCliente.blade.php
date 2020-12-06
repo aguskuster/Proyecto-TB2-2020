@@ -22,27 +22,52 @@
             <label for="inputID">ID</label>
             <input id="inputID" type="text" class="form-control" name="id" value="{{ $clienteSeleccionado -> id }} " readonly>
         </div>
+        @error('rut')
+       
+        <div class="alert alert-danger">
+            RUT invalido
+        </div>
+
+        @enderror
 
         <div class="form-group">
             <label for="inputRUT">RUT</label>
-            <input type="text" class="form-control" name="rut" id="inputRUT" value="{{ $clienteSeleccionado -> rut }}" required>
+            <input type="number" class="form-control" name="rut" id="inputRUT" value="{{ $clienteSeleccionado -> rut }}" >
+        </div>
+        @error('empresa')
+       
+        <div class="alert alert-danger">
+            Empresa invalida
         </div>
 
+        @enderror
         <div class="form-group">
             <label for="inputEmpresaNombre">Empresa</label>
             <input type="text" class="form-control" name="empresa" id="inputEmpresaNombre"
-            value="{{ $clienteSeleccionado -> empresa }}" required>
+            value="{{ $clienteSeleccionado -> empresa }}" onkeypress="return isNumericKey(event)">
+        </div>
+        @error('telefono')
+       
+        <div class="alert alert-danger">
+            Telefono invalido
         </div>
 
+        @enderror
         <div class="form-group">
             <label for="inputTelefono">Telefono</label>
-            <input type="text" class="form-control" name="telefono" id="inputTelefono"
-            value="{{ $clienteSeleccionado -> telefono }}" required>
+            <input type="number" class="form-control" name="telefono" id="inputTelefono"
+            value="{{ $clienteSeleccionado -> telefono }}" >
+        </div>
+        @error('email')
+       
+        <div class="alert alert-danger">
+            Email invalido
         </div>
 
+        @enderror
         <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="email" id="inputEmail" value="{{ $clienteSeleccionado -> email }}" required>
+            <input type="email" class="form-control" name="email" id="inputEmail" value="{{ $clienteSeleccionado -> email }}" >
         </div>
 
 

@@ -70,7 +70,7 @@ Route::post('/altaCompra', 'comprasController@altaCompra');
 
 Route::post('/altaStock/{id}', 'stockController@altaStock');
 
-
+Route::post('/agregarArticuloTabla','comprasController@agregarCompraTabla');
 
 // FORMULARIOS Modificar
 

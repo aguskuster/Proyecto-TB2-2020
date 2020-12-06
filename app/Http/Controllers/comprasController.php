@@ -12,7 +12,7 @@ class comprasController extends Controller
 {
     public function altaCompra  (Request $request) {
        
-        $compra = new comprasModel;
+      /*   $compra = new comprasModel;
 
         $compra -> proveedor = $request->get('selectProveedor');
         $compra -> categoria = $request->get('selectCategoria');
@@ -24,11 +24,37 @@ class comprasController extends Controller
         $compra -> habilitado = false;
        
         $compra -> save();
-        return redirect('historialDeCompra');
+        return redirect('historialDeCompra'); */
     
     }
 
 
+    public function agregarCompraTabla (Request $request){
+        
+        $proveedor = $request->get('selectProveedor');
+        $categoria = $request->get('selectCategoria');
+        $nombreProducto = $request->get('selectProductoNombre');
+        $precioUnitario =  $request->get('selectPrecioUnitario');
+        $moneda = $request->get('selectMoneda');
+        $cantidad = $request->input('inputCantidad');
+
+
+
+        $articulo = [ $proveedor, $categoria, $nombreProducto, $precioUnitario, $moneda , $cantidad];
+
+        
+        $empleados = empleadoModel::all();
+        $producto = insumosModel::all();
+
+        $datos = [$producto, $empleados];
+
+       
+
+
+
+        return view('compra',['articulo'=>$articulo],['datos' => $datos]);
+
+    }
     
     public function cargarDatosCompra(){
        

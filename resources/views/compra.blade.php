@@ -15,10 +15,10 @@
 
     <div class="container float-left" style="background:whitesmoke;padding:10px;border-radius:10px;width:40%;">
 
-      {{--   <form action="/altaCompra" method="post" class="needs-validation">
+        <form action="/agregarArticuloTabla" method="post" class="needs-validation">
 
             @csrf
- --}}
+
             <div class="form-group">
                 <label for="selectProveedor">Proveedor</label>
                 <select name="selectProveedor" id="selectProveedor" class="form-control">
@@ -111,47 +111,64 @@
             </div>
 
 
-            <button type="submit" class="btn btn-info">Agregar</button>
+            <button type="submit" class="btn btn-info">Agregar compra</button>
         </form>
 
     </div>
 
 
 
-   
+
+
 
     <div class="container float-right" style="background:whitesmoke;padding:10px;border-radius:10px;width:40%;">
         <form action="/altaCompra" method="post" class="needs-validation">
 
             @csrf
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Proveedor</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Nombre Producto</th>
-                   
-                    <th scope="col">Precio Unitario</th>
-                    <th scope="col">Moneda</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Borrar</th>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Proveedor</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Nombre Producto</th>
+
+                        <th scope="col">Precio Unitario</th>
+                        <th scope="col">Moneda</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Borrar</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @isset($articulo)
+
                     
-                </tr>
-            </thead>
+                    <tr>
+                        @for ($i = 0; $i < count($articulos); $i++)
 
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                   
-                </tr>
-            
-            </tbody>
-            
-            
-            
-        </table>
-        <button type="submit" class="btn btn-success float-right">Comprar</button>
+                            
 
-        <a href="historialDeCompra" class="float-left">Ver el historial de compra</a>
+                           
+                                <td> {{ $articulo[$i] }} </td>
+                           
+
+
+                        @endfor
+                    </tr>
+
+
+                    @endisset
+
+                </tbody>
+
+
+            </table>
+            <button type="submit" class="btn btn-success float-right">Comprar</button>
+            <a href="historialDeCompra" class="float-left">Ver el historial de compra</a>
+        </form>
+
+
+
         @include('templates/footer')

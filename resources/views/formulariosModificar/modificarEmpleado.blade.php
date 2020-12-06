@@ -22,36 +22,60 @@
             <label for="inputID">ID</label>
             <input id="inputID" type="text" class="form-control" name="id" value="{{ $empleadoSeleccionado -> id }} " readonly>
         </div>
-
+        @error('ci')
+        <div class="alert alert-danger">
+            Cedula invalido
+        </div>
+        @enderror
         <div class="form-group">
             <label for="inputci">CI</label>
             <input type="text" class="form-control" name="ci" id="inputci" value="{{ $empleadoSeleccionado -> ci }}" required>
         </div>
-
+        @error('nombre')
+        <div class="alert alert-danger">
+            Nombre invalido
+        </div>
+        @enderror
         <div class="form-group">
             <label for="inputEmpresaNombre">Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="inputNombre"
+            <input type="text" class="form-control" name="nombre" id="inputNombre" onkeypress="return isNumericKey(event)"
             value="{{ $empleadoSeleccionado -> nombre }}" required>
         </div>
-
+        @error('apellido')
+        <div class="alert alert-danger">
+            Apellido invalido
+        </div>
+        @enderror
         <div class="form-group">
             <label for="inputApellido">Apellido</label>
-            <input type="text" class="form-control" name="apellido" id="inputApellido"
+            <input type="text" class="form-control" name="apellido" id="inputApellido" onkeypress="return isNumericKey(event)"
             value="{{ $empleadoSeleccionado -> apellido }}" required>
         </div>  
-
+        @error('edad')
+        <div class="alert alert-danger">
+            Edad invalido
+        </div>
+        @enderror
         <div class="form-group">
             <label for="inputEdad">Edad</label>
-            <input type="text" class="form-control" name="edad" id="inputEdad"
+            <input type="text" class="form-control" name="edad" id="inputEdad" min="16" max="100"
             value="{{ $empleadoSeleccionado -> edad }}" required>
         </div>
-
+        @error('telefono')
+        <div class="alert alert-danger">
+            Telefono invalido
+        </div>
+        @enderror
         <div class="form-group">
             <label for="inputTelefono">Telefono</label>
             <input type="text" class="form-control" name="telefono" id="inputTelefono"
             value="{{ $empleadoSeleccionado -> telefono }}" required>
         </div>
-
+        @error('email')
+        <div class="alert alert-danger">
+            Email invalido
+        </div>
+        @enderror
         <div class="form-group">
             <label for="inputEmail">Email</label>
             <input type="email" class="form-control" name="email" id="inputEmail" value="{{ $empleadoSeleccionado -> email }}" required>

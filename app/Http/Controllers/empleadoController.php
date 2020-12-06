@@ -6,15 +6,8 @@ use Illuminate\Http\Request;
 use App\empleadoModel;
 class empleadoController extends Controller
 {
-   
-
-
-
-
-
-    public function altaEmpleado (Request $request){
-
-        $request->validate([
+    function validateAllInput(Request $request) {
+        return $request->validate([
             'ci'=>'size:8|required',
             'nombre'=>'required',
             'apellido'=>'required',
@@ -22,8 +15,22 @@ class empleadoController extends Controller
             'telefono'=>'required|min:8|max:9',
             'email'=>'required',
             
-
+          
         ]);
+       
+       }
+     
+
+
+
+
+
+    public function altaEmpleado (Request $request){
+
+        self::validateAllInput($request);
+    
+
+        
 
         $empleado = new empleadoModel;
 
@@ -58,8 +65,10 @@ class empleadoController extends Controller
     }
 
     public function modificarEmpleado(Request $request){
+        self::validateAllInput($request);
         $e = empleadoModel::find($request->input('id'));
-
+       
+        $e->ci = $request->input('ci');
         $e->nombre = $request->input('nombre');
         $e->apellido = $request->input('apellido');
         $e->edad = $request->input('edad');

@@ -7,9 +7,18 @@ use App\insumosModel;
 
 class insumosController extends Controller
 {
-    
+    function validateAllInput(Request $request) {
+        return $request->validate([
+            'marca'=>'|required',
+            'categoria'=>'required',
+            'nombre'=>'required',
+            'precio'=>'required',
+        ]);
+       
+       }
+     
     public function altaInsumo (Request $request){
-
+        self::validateAllInput($request);
         $insumo = new insumosModel;
 
         $insumo -> marca = $request->input('marca');
@@ -35,6 +44,7 @@ class insumosController extends Controller
 
 
     public function modificarInsumo(Request $request){
+        self::validateAllInput($request);
         $i = insumosModel::find($request->input('id'));
 
         $i->marca = $request->input('marca');
@@ -57,10 +67,6 @@ class insumosController extends Controller
         $insumos = insumosModel::where('id',$id)->first();
         return view('formulariosModificar/modificarInsumo', ['InsumoSeleccionadoModificar' => $insumos]);
     }
-
-
-
-
 
 
 

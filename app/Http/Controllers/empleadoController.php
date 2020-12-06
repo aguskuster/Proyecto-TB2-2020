@@ -34,7 +34,7 @@ class empleadoController extends Controller
         $buscar = empleadoModel::where('ci',$request->input('ci'))->first(); 
         
         if ($buscar){
-            echo "<script>alert('Capo cual haces ?') </script>";
+            echo "<script>alert('La cedula ingresada esta repetida') </script>";
             return view('formulariosAlta/altaEmpleado');
         } else {
            
@@ -74,9 +74,12 @@ class empleadoController extends Controller
 
     public function modificarEmpleado(Request $request){
         self::validateAllInput($request);
+
+        
+
         $e = empleadoModel::find($request->input('id'));
        
-        $e->ci = $request->input('ci');
+        
         $e->nombre = $request->input('nombre');
         $e->apellido = $request->input('apellido');
         $e->edad = $request->input('edad');
@@ -90,7 +93,7 @@ class empleadoController extends Controller
         
 
         return view('empleado',['empleados' => $empleado]);
-
+        
 
     }
 

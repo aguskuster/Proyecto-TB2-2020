@@ -19,17 +19,13 @@
         @csrf
 
         <div class="form-group">
-            <label for="inputID">ID</label>
-            <input id="inputID" type="text" class="form-control" name="id" value="{{ $empleadoSeleccionado -> id }} " readonly>
+            
+            <input id="inputID" type="text" class="form-control" name="id" value="{{ $empleadoSeleccionado -> id }} " hidden>
         </div>
-        @error('ci')
-        <div class="alert alert-danger">
-            Cedula invalido
-        </div>
-        @enderror
+       
         <div class="form-group">
             <label for="inputci">CI</label>
-            <input type="text" class="form-control" name="ci" id="inputci" value="{{ $empleadoSeleccionado -> ci }}" required>
+            <input type="text" class="form-control" name="ci" id="inputci" value="{{ $empleadoSeleccionado -> ci }}" readonly>
         </div>
         @error('nombre')
         <div class="alert alert-danger">

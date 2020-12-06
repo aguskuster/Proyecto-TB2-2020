@@ -20,6 +20,13 @@ class clienteController extends Controller
     public function altaCliente (Request $request){
         self::validateAllInput($request);
 
+        $buscar = clienteModel::where('rut',$request->input('rut'))->first(); 
+        
+        if ($buscar){
+            echo "<script>alert('El rut ingresado esta repetida') </script>";
+            return view('formulariosAlta/altaCliente');
+        } else {
+
         $cliente = new clienteModel;
 
         $cliente -> rut = $request->input('rut');
@@ -32,7 +39,8 @@ class clienteController extends Controller
         
         return view('formulariosAlta/altaCliente', ['clienteCreado' => $cliente]);
        
-    }
+        }
+    }   
 
 
 
@@ -48,7 +56,7 @@ class clienteController extends Controller
         self::validateAllInput($request);
         $p = clienteModel::find($request->input('id'));
 
-        $p->rut = $request->input('rut');
+        
         $p->empresa = $request->input('empresa');
         $p->telefono = $request->input('telefono');
         $p->email = $request->input('email');

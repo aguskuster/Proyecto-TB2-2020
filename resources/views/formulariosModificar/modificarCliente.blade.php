@@ -19,20 +19,14 @@
         @csrf
 
         <div class="form-group">
-            <label for="inputID">ID</label>
-            <input id="inputID" type="text" class="form-control" name="id" value="{{ $clienteSeleccionado -> id }} " readonly>
+            
+            <input id="inputID" type="text" class="form-control" name="id" value="{{ $clienteSeleccionado -> id }} " hidden>
         </div>
-        @error('rut')
-       
-        <div class="alert alert-danger">
-            RUT invalido
-        </div>
-
-        @enderror
+      
 
         <div class="form-group">
             <label for="inputRUT">RUT</label>
-            <input type="number" class="form-control" name="rut" id="inputRUT" value="{{ $clienteSeleccionado -> rut }}" >
+            <input type="number" class="form-control" readonly name="rut" id="inputRUT" value="{{ $clienteSeleccionado -> rut }}" >
         </div>
         @error('empresa')
        

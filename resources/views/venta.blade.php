@@ -48,7 +48,7 @@
 
                     @foreach ($datos[0] as $p)
 
-                        <option value="{{ $p->proveedor }}"> {{ $p->proveedor }} </option>
+                        <option value="{{ $p->nombreProducto }}"> {{ $p->nombreProducto }} </option>
 
                     @endforeach
 

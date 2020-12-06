@@ -13,7 +13,7 @@ class ventaController extends Controller
 
     public function altaVenta (Request $request) {
         $venta = new ventaModel;
-
+     
         $venta -> clienteRUT = $request->get('selectClienteRut');
         $venta -> clienteNombre = $request->get('selectClienteNombre');
         $venta -> insumoNombre = $request->get('selectProductoNombre');
@@ -21,7 +21,11 @@ class ventaController extends Controller
         $venta -> insumoCantidad = $request->input('selectProductoCantidad');
         $venta -> empleadoNombre = $request->get('selectVendedor');
         
+        self::descontarStock($request->get('selectProductoNombre'),$request->input('selectProductoCantidad'));
+      
         $venta -> save();
+
+       
 
        
         
@@ -30,7 +34,15 @@ class ventaController extends Controller
         
     
     }
+/* 
+    public function descontarStock($productoNombre, $cantidad) {
+        $stock = stockModel::find($productoNombre);
+        
+        $stock -> cantidad -= 1;
 
+        $stock-> save();
+    }
+ */
     public function listarHistorialVenta () {
 
         $cargarVentas = ventaModel::all();

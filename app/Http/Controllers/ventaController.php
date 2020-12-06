@@ -21,28 +21,19 @@ class ventaController extends Controller
         $venta -> insumoCantidad = $request->input('selectProductoCantidad');
         $venta -> empleadoNombre = $request->get('selectVendedor');
         
-        self::descontarStock($request->get('selectProductoNombre'),$request->input('selectProductoCantidad'));
+       
       
         $venta -> save();
 
-       
-
-       
         
 
         return redirect('historialVenta');
         
     
     }
-/* 
-    public function descontarStock($productoNombre, $cantidad) {
-        $stock = stockModel::find($productoNombre);
-        
-        $stock -> cantidad -= 1;
 
-        $stock-> save();
-    }
- */
+    
+ 
     public function listarHistorialVenta () {
 
         $cargarVentas = ventaModel::all();

@@ -23,28 +23,40 @@ class empleadoController extends Controller
 
 
 
-
+    
+        
+   
 
     public function altaEmpleado (Request $request){
 
         self::validateAllInput($request);
+
+        $buscar = empleadoModel::where('ci',$request->input('ci'))->first(); 
+        
+        if ($buscar){
+            echo "<script>alert('Capo cual haces ?') </script>";
+            return view('formulariosAlta/altaEmpleado');
+        } else {
+           
+            $empleado = new empleadoModel;
+
+            $empleado -> ci = $request->input('ci');
+            $empleado -> nombre = $request->input('nombre');
+            $empleado -> apellido = $request->input('apellido');
+            $empleado -> edad = $request->input('edad');
+            $empleado -> email = $request->input('email');
+            $empleado -> telefono = $request->input('telefono');
+            
+            $empleado -> save();
     
+            
+            return view('formulariosAlta/altaEmpleado', ['empleadoCreado' => $empleado]);
+        }
+        
 
         
 
-        $empleado = new empleadoModel;
-
-        $empleado -> ci = $request->input('ci');
-        $empleado -> nombre = $request->input('nombre');
-        $empleado -> apellido = $request->input('apellido');
-        $empleado -> edad = $request->input('edad');
-        $empleado -> email = $request->input('email');
-        $empleado -> telefono = $request->input('telefono');
-        
-        $empleado -> save();
-
-        
-        return view('formulariosAlta/altaEmpleado', ['empleadoCreado' => $empleado]);
+       
        
     }
 

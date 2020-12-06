@@ -23,6 +23,8 @@ class EmpleadoTable extends Migration
             $table->string('email');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
+
+            $table->unique('ci');
             $table->softDeletes();
         });
     }

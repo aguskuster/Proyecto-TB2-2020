@@ -58,11 +58,7 @@ class empleadoController extends Controller
 
 
 
-    public function listarEmpleado () {
-        $empleado = empleadoModel::all();
-
-        return view('empleado', ['empleado' => $empleado]);
-    }
+ 
 
     public function modificarEmpleado(Request $request){
         self::validateAllInput($request);

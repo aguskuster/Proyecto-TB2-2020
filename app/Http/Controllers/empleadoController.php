@@ -6,9 +6,24 @@ use Illuminate\Http\Request;
 use App\empleadoModel;
 class empleadoController extends Controller
 {
-    
-    
+   
+
+
+
+
+
     public function altaEmpleado (Request $request){
+
+        $request->validate([
+            'ci'=>'size:8|required',
+            'nombre'=>'required',
+            'apellido'=>'required',
+            'edad'=>'required',
+            'telefono'=>'required',
+            'email'=>'required',
+            
+
+        ]);
 
         $empleado = new empleadoModel;
 

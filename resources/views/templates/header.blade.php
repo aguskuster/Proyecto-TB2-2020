@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
 
     <title>Insumos Inf.</title>
 
@@ -22,6 +22,24 @@
     <style>
         * {
             font-family: 'Roboto';
+        }
+
+        input[type=number]::-webkit-outer-spin-button,
+
+        input[type=number]::-webkit-inner-spin-button {
+
+            -webkit-appearance: none;
+
+            margin: 0;
+
+        }
+
+
+
+        input[type=number] {
+
+            -moz-appearance: textfield;
+
         }
 
     </style>
@@ -37,14 +55,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-               
+
                 <li class="nav-item">
                     <a class="nav-link" href="/Empleado">Empleados</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Cliente">Clientes</a>
                 </li>
-             
+
                 <li class="nav-item">
                     <a class="nav-link" href="/Stock">Stock</a>
                 </li>
@@ -54,7 +72,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/Venta">Ventas</a>
                 </li>
-            
+
 
             </ul>
         </div>

@@ -94,12 +94,11 @@ Route::post('/modificarVenta', 'ventaController@modificarVenta');
 
 Route::get('/modificarVenta/{id}', 'ventaController@listarVentaParaModificar');
 
-
-
-
 Route::get('/modificarHisotrialCompra/{id}', 'comprasController@listarHisotrialCompraParaModificar');
 Route::post('/modificarHisotrialCompra', 'comprasController@modificarHistorialCompra');
 
+Route::get('/modificarStock/{id}', 'stockController@listarStockParaModificar');
+Route::post('/modificarStock', 'stockController@modificarStock');
 
 
 
@@ -124,3 +123,6 @@ Route::get('/bajaVenta/{id}', 'ventaController@listarVentaParaEliminar');
 
 Route::post('/bajaCompra', 'comprasController@eliminarCompra');
 Route::get('/bajaCompra/{id}', 'comprasController@listarCompraParaEliminar') ;
+
+Route::post('/bajaStock', 'stockController@eliminarStock');
+Route::get('/bajaStock/{id}', 'stockController@listarStockParaEliminar') ;

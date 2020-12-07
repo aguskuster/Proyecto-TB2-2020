@@ -15,8 +15,8 @@
 
     <div class="container float-left" style="background:whitesmoke;padding:10px;border-radius:10px;width:40%;">
 
-        <form action="/agregarArticuloTabla" method="post" class="needs-validation">
-
+     {{--    <form action="/agregarArticuloTabla" method="post" class="needs-validation"> --}}
+        <form action="/altaCompra" method="post" class="needs-validation">
             @csrf
 
             <div class="form-group">
@@ -144,19 +144,13 @@
                 <tbody>
                     @isset($articulo)
 
-                    
-                    <tr>
-                        @for ($i = 0; $i < count($articulos); $i++)
+                        <tr>
+                            @for ($i = 0; $i < 6; $i++)
 
-                            
-
-                           
                                 <td> {{ $articulo[$i] }} </td>
-                           
 
-
-                        @endfor
-                    </tr>
+                            @endfor
+                        </tr>
 
 
                     @endisset

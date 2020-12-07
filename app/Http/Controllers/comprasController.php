@@ -12,7 +12,7 @@ class comprasController extends Controller
 {
     public function altaCompra  (Request $request) {
        
-      /*   $compra = new comprasModel;
+        $compra = new comprasModel;
 
         $compra -> proveedor = $request->get('selectProveedor');
         $compra -> categoria = $request->get('selectCategoria');
@@ -24,7 +24,7 @@ class comprasController extends Controller
         $compra -> habilitado = false;
        
         $compra -> save();
-        return redirect('historialDeCompra'); */
+        return redirect('historialDeCompra'); 
     
     }
 
@@ -38,21 +38,14 @@ class comprasController extends Controller
         $moneda = $request->get('selectMoneda');
         $cantidad = $request->input('inputCantidad');
 
-
-
         $articulo = [ $proveedor, $categoria, $nombreProducto, $precioUnitario, $moneda , $cantidad];
-
         
         $empleados = empleadoModel::all();
         $producto = insumosModel::all();
 
         $datos = [$producto, $empleados];
 
-       
-
-
-
-        return view('compra',['articulo'=>$articulo],['datos' => $datos]);
+        return view('compra',['articulo'=>$articulo],['datos' => $datos],);
 
     }
     
@@ -97,7 +90,7 @@ class comprasController extends Controller
     
     public function modificarHistorialCompra(Request $request){
         $i = comprasModel::find($request->input('id'));
-
+        
         $i->proveedor = $request->input('proveedor');
         $i->categoria = $request->input('categoria');
         $i->nombreProducto = $request->input('nombreProducto');

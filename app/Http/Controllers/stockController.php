@@ -36,6 +36,7 @@ class stockController extends Controller
     }
 
 
+ 
 
     public function modificarStock(Request $request){
       
@@ -78,6 +79,10 @@ class stockController extends Controller
         $resultado = self::listarStock();
         return $resultado;
 
+    }
+
+    public function listarInfoStock(){
+        
     }
 
 }

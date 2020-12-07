@@ -4,15 +4,20 @@
 <div class="container-fluid">
 
     <br><br>
-    <h3 class="text-center">Compra de Carlo</h3>
+    <h3 class="text-center">Compra de Productos</h3>
     <br><br><br>
-
+    
     <div class="container float-left"
         style="margin-left:5%;width:40%;background:whitesmoke;padding:10px;border-radius:10px;">
 
-        <form method="post" action="/agregarCarrito" id="agregarCarrito"> 
-            @csrf
+       
+
+
+        {{-- <form method="post" action="/agregarCarrito" id="agregarCarrito">
+            --}}
+
             <div class="form-group" style="margin:auto">
+                
                 <form action="/filtrar" method="post" class="needs-validation" id="filtrar">
 
                     @csrf
@@ -56,8 +61,7 @@
                     </select>
 
 
-                    <input type="submit" class="btn btn-info float-left inline-block"
-                        value="Filtrar">
+                    <input type="submit" class="btn btn-info float-left inline-block" value="Filtrar">
 
                 </form>
 
@@ -101,10 +105,11 @@
 
             </div>
 
-           <input type="submit"  class="btn btn-success float-right" value="Agregar al Carrito">
-                
- 
-        </form>
+            <input type="submit" class="btn btn-success float-right" value="Agregar al Carrito">
+
+
+            {{--
+        </form> --}}
 
 
 
@@ -155,10 +160,11 @@
             <a href="historialDeCompra" class="float-left">Ver el historial de compra</a>
         </form>
 
-
+        <a href="/altaInsumo" style="text-decoration:none;"> <button type="button" style="border-radius:10px 10px 0px 0px;"
+            class="btn btn-success " style="width:100%">Agregar Insumo</button></a>
     </div>
-
-
+   
+ 
 </div>
 
 

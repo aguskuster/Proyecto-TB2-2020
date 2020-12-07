@@ -30,43 +30,7 @@
 
 
 
-   /*  function objetoAjax() {
-        var xmlhttp = false;
-        try {
-            xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {
-            try {
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch (E) {
-                xmlhttp = false;
-            }
-        }
-
-        if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
-            xmlhttp = new XMLHttpRequest();
-        }
-        return xmlhttp;
-    }
-
-
-    function consultaMarcaProducto() {
-        var ajax2 = objetoAjax();
-        ajax2.open("POST", "./coso.php", true);
-
-        ajax2.onreadystatechange = function() {
-            if (ajax2.readyState == 4) {
-                if (ajax2.status == 0) {
-                    return;
-                }
-
-                var mensaje = (ajax2.responseText)
-                console.log (mensaje);
-            }
-        }
-        ajax2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        ajax2.send("");
-    }
-     */
+  
 </script>
 
 

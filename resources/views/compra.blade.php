@@ -1,104 +1,95 @@
 @include('templates/header')
 
+
 <div class="container-fluid">
 
-
     <br><br>
-    <h3 class="text-center">Compra de Insumos</h3>
+    <h3 class="text-center">Compra de Carlo</h3>
     <br><br><br>
 
-    <a href="/Insumos"><button class="btn btn-info btn-lg btn-block">Agregar artículo nuevo</button></a>
+    <div class="container float-left"
+        style="margin-left:5%;width:40%;background:whitesmoke;padding:10px;border-radius:10px;">
 
-
-
-
-
-    <div class="container float-left" style="background:whitesmoke;padding:10px;border-radius:10px;width:40%;">
-
-     {{--    <form action="/agregarArticuloTabla" method="post" class="needs-validation"> --}}
-        <form action="/altaCompra" method="post" class="needs-validation">
+        <form method="post" action="/agregarCarrito" id="agregarCarrito"> 
             @csrf
+            <div class="form-group" style="margin:auto">
+                <form action="/filtrar" method="post" class="needs-validation" id="filtrar">
 
-            <div class="form-group">
-                <label for="selectProveedor">Proveedor</label>
-                <select name="selectProveedor" id="selectProveedor" class="form-control">
+                    @csrf
+                    <label for="selectProveedor">Proveedor y Categoria</label>
+                    <br>
 
-                    @foreach ($datos[0] as $p)
+                    <select name="selectProveedor" class="form-control inline-block float-left"
+                        style="width:30%;margin-right:10px;">
 
-                        <option value="{{ $p->marca }}">{{ $p->marca }}</option>
+                        @isset($prodFiltrado)
 
-                    @endforeach
+                            @foreach ($prodFiltrado as $marcaAnterior)
+                                <option value="{{ $marcaAnterior->marca }}">{{ $marcaAnterior->marca }}</option>
+                            @endforeach
 
+                        @endisset
+                        @foreach ($datos[0] as $p)
+
+
+
+                            <option value="{{ $p->marca }}">{{ $p->marca }}</option>
+
+                        @endforeach
+
+
+
+                    </select>
+
+                    <select name="selectCategoria" class="form-control inline-block float-left"
+                        style="width:30%;margin-right:10px;">
+
+
+                        @foreach ($datos[0] as $p)
+
+                            <option value="{{ $p->id }}">{{ $p->categoria }}</option>
+
+                        @endforeach
+
+
+
+                    </select>
+
+
+                    <input type="submit" class="btn btn-info float-left inline-block"
+                        value="Filtrar">
+
+                </form>
+
+
+                <br><br>
+                <label for="selectProveedor">Producto</label>
+
+
+                <select name="selectProveedor" id="selectProveedor" class="form-control inline-block"
+                    style="width:50%;margin-right:10px;">
+                    @isset($prodFiltrado)
+                        @foreach ($prodFiltrado as $prod)
+
+                            <option value="{{ $prod->nombre }}">
+                                {{ $prod->nombre }} : {{ $prod->precio }} USD
+                            </option>
+
+                        @endforeach
+
+                    @endisset
                 </select>
 
-            </div>
 
-            <div class="form-group">
-                <label for="selectCategoria">Categoria</label>
-                <select name="selectCategoria" id="selectCategoria" class="form-control">
-
-                    @foreach ($datos[0] as $p)
-
-                        <option value="{{ $p->categoria }}">{{ $p->categoria }}</option>
-
-                    @endforeach
-
-                </select>
+                <br>
+                <label for="cantidad">Cantidad</label>
+                <input type="text" id="cantidad" name="cantidad" class="form-control" style="width:50%">
 
             </div>
-
-            <div class="form-group">
-                <label for="selectProductoNombre">Nombre Producto</label>
-                <select name="selectProductoNombre" id="selectProductoNombre" class="form-control">
-
-                    @foreach ($datos[0] as $p)
-
-                        <option value="{{ $p->nombre }}"> {{ $p->nombre }} </option>
-
-                    @endforeach
-
-                </select>
-
-            </div>
-
-            <div class="form-group">
-                <label for="selectPrecioUnitario">Precio Unitario</label>
-                <select name="selectPrecioUnitario" id="selectPrecioUnitario" class="form-control">
-
-                    @foreach ($datos[0] as $p)
-
-                        <option value="{{ $p->precio }}"> {{ $p->precio }} </option>
-
-                    @endforeach
-
-                </select>
-
-            </div>
-
-            <div class="form-group">
-                <label for="selectMoneda">Moneda</label>
-                <select name="selectMoneda" id="selectMoneda" class="form-control">
-
-                    @foreach ($datos[0] as $p)
-
-                        <option value="{{ $p->moneda }}"> {{ $p->moneda }} </option>
-
-                    @endforeach
-
-                </select>
-
-            </div>
-
-            <div class="form-group">
-                <label for="inputCantidad">Cantidad</label>
-                <input type="text" class="form-control" name="inputCantidad" id="inputCantidad" value="1" required>
-            </div>
-
-
-
+            <br>
             <div class="form-group">
                 <label for="selectVendedor">Vendedor</label>
-                <select name="selectVendedor" id="selectVendedor" class="form-control">
+                <select name="selectVendedor" id="selectVendedor" class="form-control" style="width:50%">
 
                     @foreach ($datos[1] as $e)
 
@@ -110,22 +101,24 @@
 
             </div>
 
-
-            <button type="submit" class="btn btn-info">Agregar compra</button>
+           <input type="submit"  class="btn btn-success float-right" value="Agregar al Carrito">
+                
+ 
         </form>
+
+
+
 
     </div>
 
+    <div class="container float-right"
+        style="margin-right:5%;width:48%;background:#1d1d1f;padding:10px;border-radius:10px;">
 
 
-
-
-
-    <div class="container float-right" style="background:whitesmoke;padding:10px;border-radius:10px;width:40%;">
         <form action="/altaCompra" method="post" class="needs-validation">
 
             @csrf
-            <table class="table">
+            <table class="table" style="border-radius:10px;">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>
@@ -142,18 +135,17 @@
                 </thead>
 
                 <tbody>
-                    @isset($articulo)
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
 
-                        <tr>
-                            @for ($i = 0; $i < 6; $i++)
-
-                                <td> {{ $articulo[$i] }} </td>
-
-                            @endfor
-                        </tr>
-
-
-                    @endisset
+                    </tr>
 
                 </tbody>
 
@@ -164,5 +156,10 @@
         </form>
 
 
+    </div>
 
-        @include('templates/footer')
+
+</div>
+
+
+@include('templates/footer')

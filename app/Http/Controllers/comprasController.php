@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use App\insumosModel;
 use App\empleadoModel;
 use App\comprasModel;
+use App\carritoModel;
 
 
 class comprasController extends Controller
 {
-    public function altaCompra  (Request $request) {
+    
+    /* public function altaCompra  (Request $request) {
        
         $compra = new comprasModel;
 
@@ -112,8 +114,32 @@ class comprasController extends Controller
     }
  
 
+ */
+    public function cargarDatosCompra(){
+       
+        $empleados = empleadoModel::all();
+        $producto = insumosModel::all(); // distinct EN LARAVEL ???? no funca ->distinct();
+        $datos = [$producto, $empleados];
+        
+
+         return view('compra',['datos' => $datos]);
 
 
+    }
+
+    public function buscarMarca(Request $request){
+        
+        $listaDeProductos = insumosModel::where('marca','LIKE','%'.$request->get('selectProveedor').'%', 'AND','categoria','LIKE','%'.$request->get('selectCategoria').'%' )->get();
+        
+        $empleados = empleadoModel::all();
+        $producto = insumosModel::all();
+        $datos = [$producto, $empleados];
+
+        
+        return view('compra',['datos' => $datos],['prodFiltrado' => $listaDeProductos]);
+
+        
+    }
 
 
 }

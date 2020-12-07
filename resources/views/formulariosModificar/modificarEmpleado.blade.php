@@ -47,6 +47,17 @@
             <input type="text" class="form-control" name="apellido" id="inputApellido" onkeypress="return isNumericKey(event)"
             value="{{ $empleadoSeleccionado -> apellido }}" required>
         </div>  
+
+        @error('contrasenia')
+        <div class="alert alert-danger">
+            Apellido invalido
+        </div>
+        @enderror
+        <div class="form-group">
+            <label for="inputContrasenia">Contraseña</label>
+            <input type="password" class="form-control" name="contrasenia" id="inputContrasenia" 
+            value="{{ $empleadoSeleccionado -> contrasenia }}" required>
+        </div> 
         @error('edad')
         <div class="alert alert-danger">
             Edad invalido

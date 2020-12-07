@@ -18,6 +18,7 @@ class EmpleadoTable extends Migration
             $table->string('ci');
             $table->string('nombre');
             $table->string('apellido');
+            $table->string('contrasenia');
             $table->string('edad');
             $table->string('telefono');
             $table->string('email');

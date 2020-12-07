@@ -14,7 +14,7 @@ class empleadoController extends Controller
             'edad'=>'required',
             'telefono'=>'required|min:8|max:9',
             'email'=>'required',
-            
+            'contrasenia' => 'required|min:7|max:30'
           
         ]);
        
@@ -41,6 +41,7 @@ class empleadoController extends Controller
             $empleado = new empleadoModel;
 
             $empleado -> ci = $request->input('ci');
+            $empleado -> contrasenia = $request->input('contrasenia');
             $empleado -> nombre = $request->input('nombre');
             $empleado -> apellido = $request->input('apellido');
             $empleado -> edad = $request->input('edad');
@@ -79,7 +80,7 @@ class empleadoController extends Controller
 
         $e = empleadoModel::find($request->input('id'));
        
-        
+        $e -> contrasenia = $request->input('contrasenia');
         $e->nombre = $request->input('nombre');
         $e->apellido = $request->input('apellido');
         $e->edad = $request->input('edad');

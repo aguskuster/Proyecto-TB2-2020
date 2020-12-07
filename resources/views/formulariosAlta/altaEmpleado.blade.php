@@ -13,16 +13,7 @@
 
     <form action="/altaEmpleado" method="post" class="needs-validation">
         @csrf
-       
-        @error('ci')
-        <div class="alert alert-danger">
-            Cedula invalido
-        </div>
-        @enderror
-        <div class="form-group">
-            <label for="inputRUT">Cedula <em>*</em></label>
-            <input type="number" class="form-control" name="ci" id="inputCedula" placeholder="Ingrese Cedula" value={{old ('ci')}} >
-        </div>
+
         @error('nombre')
        
         <div class="alert alert-danger">
@@ -48,6 +39,26 @@
             <input type="text" class="form-control" name="apellido" id="input-field" onkeypress="return isNumericKey(event)" 
             placeholder="Ingrese Apellido"  value={{old ('apellido')}}>
         </div>
+       
+        @error('ci')
+        <div class="alert alert-danger">
+            Cedula invalido
+        </div>
+        @enderror
+        <div class="form-group">
+            <label for="inputRUT">Cedula <em>*</em></label>
+            <input type="number" class="form-control" name="ci" id="inputCedula" placeholder="Ingrese Cedula" value={{old ('ci')}} >
+        </div>
+        @error('contrasenia')
+        <div class="alert alert-danger">
+            Contraseña invalida
+        </div>
+        @enderror
+        <div class="form-group">
+            <label for="inputContrasenia">Contraseña <em>*</em></label>
+            <input type="password" class="form-control" name="contrasenia" id="inputContrasenia" placeholder="Ingrese Contraseña" value={{old ('contrasenia')}} >
+        </div>
+       
         @error('edad')
        
         <div class="alert alert-danger">

@@ -4,8 +4,37 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\empleadoModel;
+use Closure;
+use Illuminate\Support\Facades\Auth;
+
+
 class empleadoController extends Controller
 {
+    public function autenticarEmpleado(Request $request,Closure $next){
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
+        else{
+            return view('login',['error' => "true"]);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function validateAllInput(Request $request) {
         return $request->validate([
             'ci'=>'size:8|required',

@@ -12,16 +12,36 @@
 */
 
 
+// LOGIN 
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::post('/login','empleadoController@autenticarEmpleado');
+
+
+
+
+
+
+
+
+
 // VISTAS PRINCIPALES 
 
 Route::get('/', function () {
-    return view('home');
+    return view('dashboard');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 
 Route::get('/Cliente','clienteController@listarClientes');
 
-Route::get('/Empleado','empleadoController@listarEmpleados' );
+Route::get('/Empleado','empleadoController@listarEmpleados' )->middleware('autenticacion');
 
 Route::get('/Insumos','insumosController@listarInsumos' );
 

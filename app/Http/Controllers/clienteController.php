@@ -4,8 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\clienteModel;
+use App;
+
 class clienteController extends Controller
 {
+    public function generarPDF($id){
+        $persona = clienteModel::where('id',$id)->first();
+
+        $pdf = App::make('dompdf.wrapper');
+
+        
+        $pdf ->loadHTML($persona);
+        return $pdf->stream();
+
+
+    }
+
+
+
+
+
+
     function validateAllInput(Request $request) {
         return $request->validate([
             'rut'=>'size:12|required',

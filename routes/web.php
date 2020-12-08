@@ -41,7 +41,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/Cliente','clienteController@listarClientes');
 
-Route::get('/Empleado','empleadoController@listarEmpleados' )->middleware('autenticacion');
+Route::get('/Empleado','empleadoController@listarEmpleados' );
 
 Route::get('/Insumos','insumosController@listarInsumos' );
 
@@ -66,11 +66,13 @@ Route::get('/altaCliente', function () {
 });
 Route::post('/altaCliente','clienteController@altaCliente');
 
+Route::get('/generarPDF/{id}','clienteController@generarPDF');
+
 
 
 Route::get('/altaEmpleado', function () {
     return view('formulariosAlta/altaEmpleado');
-});
+})->middleware('autenticacion');
 
 Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
 

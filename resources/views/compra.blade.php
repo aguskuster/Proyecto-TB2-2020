@@ -34,7 +34,7 @@
                             @endforeach
 
                         @endisset
-                        @foreach ($datos[0] as $p)
+                        @foreach ($producto as $p)
 
 
 
@@ -50,7 +50,7 @@
                         style="width:30%;margin-right:10px;">
 
 
-                        @foreach ($datos[0] as $p)
+                        @foreach ($producto as $p)
 
                             <option value="{{ $p->id }}">{{ $p->categoria }}</option>
 
@@ -95,7 +95,7 @@
                 <label for="selectVendedor">Vendedor</label>
                 <select name="selectVendedor" id="selectVendedor" class="form-control" style="width:50%">
 
-                    @foreach ($datos[1] as $e)
+                    @foreach ($empleados as $e)
 
                         <option value="{{ $e->nombre }} {{ $e->apellido }}">{{ $e->nombre }} {{ $e->apellido }}</option>
 

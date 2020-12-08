@@ -118,11 +118,12 @@ class comprasController extends Controller
     public function cargarDatosCompra(){
        
         $empleados = empleadoModel::all();
-        $producto = insumosModel::all(); // distinct EN LARAVEL ???? no funca ->distinct();
+        $producto = insumosModel::distinct()->get();
         $datos = [$producto, $empleados];
         
 
-         return view('compra',['datos' => $datos]);
+         return view('compra',[ 'empleados' => $empleados,'producto' => $producto,]);
+         
 
 
     }
@@ -132,11 +133,15 @@ class comprasController extends Controller
         $listaDeProductos = insumosModel::where('marca','LIKE','%'.$request->get('selectProveedor').'%', 'AND','categoria','LIKE','%'.$request->get('selectCategoria').'%' )->get();
         
         $empleados = empleadoModel::all();
-        $producto = insumosModel::all();
-        $datos = [$producto, $empleados];
+        $producto = insumosModel::all()->distinct()->get();
+        
 
         
-        return view('compra',['datos' => $datos],['prodFiltrado' => $listaDeProductos]);
+        return view('compra',[
+            'empleados' => $empleados,
+            'producto' => $producto,
+            'prodFiltrado' => $listaDeProductos        
+        ]);
 
         
     }

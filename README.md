@@ -45,9 +45,6 @@ Comandos php artisan make:
 
 ` # php artisan make:migration nombreDeLaMigracion # CREA UNA MIGRACION`
 
-` # LUEGO DE CREAR LA MIGRATION Y PONER EL CODIGO PARA CREAR LA TABLA , ACORDATE DE PONER:`
-
 ` # php artisan migrate`
-
 
 ` # php artisan serve`

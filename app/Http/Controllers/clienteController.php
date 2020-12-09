@@ -8,18 +8,7 @@ use App;
 
 class clienteController extends Controller
 {
-    public function generarPDF($id){
-        $persona = clienteModel::where('id',$id)->first();
-
-        $pdf = App::make('dompdf.wrapper');
-
-        
-        $pdf ->loadHTML($persona);
-        return $pdf->stream();
-
-
-    }
-
+ 
 
 
 

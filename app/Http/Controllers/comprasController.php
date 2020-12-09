@@ -8,7 +8,7 @@ use App\empleadoModel;
 use App\comprasModel;
 use App\carritoModel;
 
-
+use App;
 class comprasController extends Controller
 {
     
@@ -83,6 +83,26 @@ class comprasController extends Controller
       
         $resultado = self::listarStock();
         return $resultado;
+    }
+
+    public function generarPDF($id){
+        $compra = comprasModel::where('id',$id)->first();
+
+        $pdf = App::make('dompdf.wrapper');
+
+        $formulario = `
+                        
+        
+        <p> {{$compra -> proveedor }} </p>
+
+
+
+
+
+                      `;
+
+        $pdf ->loadHTML($formulario);
+        return $pdf->stream();
     }
 
 

@@ -66,7 +66,7 @@ Route::get('/altaCliente', function () {
 });
 Route::post('/altaCliente','clienteController@altaCliente');
 
-Route::get('/generarPDF/{id}','clienteController@generarPDF');
+
 
 
 
@@ -144,11 +144,12 @@ Route::get('/bajaVenta/{id}', 'ventaController@listarVentaParaEliminar');
 
 
 
-Route::get('/bajaStock/{id}', 'comprasController@listarProductoParaEliminar') ; 
+Route::get('/baja/{id}', 'comprasController@listarProductoParaEliminar') ; 
 Route::post('/bajaStock', 'comprasController@eliminarStock'); 
 
 
 
-// FILTROS 
+// GENERAR REPORTES
 
-Route::post('/filtrar', 'comprasController@buscarMarca');
+
+Route::get('/generarCompraPDF/{id}','comprasController@generarPDF');

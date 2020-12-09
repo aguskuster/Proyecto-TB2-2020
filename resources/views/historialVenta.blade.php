@@ -32,6 +32,7 @@
                 <th scope="col">Fecha</th>
                 <th scope="col">Modificar</th>
                 <th scope="col">Eliminar</th>
+                <th scope="col">PDF</th>
             </tr>
         </thead>
 
@@ -49,6 +50,7 @@
                     <td> {{ $v->created_at }} </td>
                     <td><a href="/modificarVenta/{{ $v->id }}" name='id'><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
                     <td><a href="/bajaVenta/{{ $v->id }}"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
+                    <td><a href="/generarVentaPDF/{{ $v->id }}"><i style="margin-left:10px;font-size:20px;color:red;"class="fas fa-file-pdf"></i></a></td>
                 </tr>
 
             </tbody>

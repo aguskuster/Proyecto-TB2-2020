@@ -25,11 +25,17 @@ class ventaController extends Controller
       
         $venta -> save();
 
+        self::descontarArticulo($request->get('selectProductoNombre'));
         
 
         return redirect('historialVenta');
         
     
+    }
+
+    public function descontarArticulo($articulo){
+        $compra = comprasModel::where('nombreProducto',$articulo,'AND','proveedor', $marca)->first();
+
     }
 
     

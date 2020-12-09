@@ -10,7 +10,7 @@
 
 
 
-    <a href="formulariosAlta/altaStock"><button class="btn btn-warning btn-lg btn-block">Habilitar Stock</button></a>
+    
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -20,14 +20,14 @@
                 <th scope="col">Producto</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
-                <th scope="col">Fecha</th>
+                
                 <th scope="col">Modificar</th>
                 <th scope="col">Eliminar</th>
 
             </tr>
         </thead>
 
-        @if ($stockHabilitado)
+        @isset ($stockHabilitado)
             @foreach ($stockHabilitado as $h)
 
                 <tbody>
@@ -37,7 +37,6 @@
                         <td> {{ $h->nombreProducto }} </td>
                         <td> {{ $h->precioUnitario }} {{ $h->moneda }}</td>
                         <td> {{ $h->cantidad }} </td>
-                        <td> {{ $h->created_at }} </td>
                         <td><a href="/modificarStock/{{ $h->id }}"><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
                         <td><a href="/bajaStock/{{ $h->id }}"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
 
@@ -47,7 +46,7 @@
 
             @endforeach
 
-        @endif
+        @endisset
 
 
     </table>

@@ -22,7 +22,7 @@ class ComprasTable extends Migration
             $table->string('moneda');
             $table->string('cantidad');
             $table->string('empleado');
-            $table->boolean('habilitado');
+           
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->softDeletes();

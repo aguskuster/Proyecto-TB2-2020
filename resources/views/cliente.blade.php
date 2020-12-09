@@ -41,7 +41,7 @@
                     <td> {{ $c->email }} </td>
                     <td><a href="/modificarCliente/{{ $c->id }}" name='id'><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
                     <td><a href="/bajaCliente/{{ $c->id }}"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
-                    <td><a href="/generarPDF/{{ $c->id }}"><i style="font-size:20px;margin-left:20px;color:black;"class="fas fa-file-pdf"></i></a></td>
+                    
                 </tr>
 
             </tbody>

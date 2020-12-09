@@ -12,44 +12,46 @@ use App\carritoModel;
 class comprasController extends Controller
 {
     
-    /* public function altaCompra  (Request $request) {
+     public function altaCompra  (Request $request) {
        
         $compra = new comprasModel;
 
-        $compra -> proveedor = $request->get('selectProveedor');
-        $compra -> categoria = $request->get('selectCategoria');
-        $compra -> nombreProducto = $request->get('selectProductoNombre');
-        $compra -> precioUnitario = $request->get('selectPrecioUnitario');
-        $compra -> moneda = $request->get('selectMoneda');
-        $compra -> cantidad = $request->input('inputCantidad');
+        $compra -> proveedor = $request->input('inputProductoMarca');
+        $compra -> categoria = $request->input('inputProductoCategoria');
+        $compra -> nombreProducto = $request->input('inputProductoNombre');
+        $compra -> precioUnitario = $request->input('inputPrecioUnitario');
+        $compra -> moneda = $request->input('inputMoneda');
+        $compra -> cantidad = $request->input('inputProductoCantidad');
         $compra -> empleado = $request->get('selectVendedor');
-        $compra -> habilitado = false;
        
         $compra -> save();
-        return redirect('historialDeCompra'); 
+
+        $p = true;
+
+        $empleados = empleadoModel::all();
+        return redirect('compras', ['empleados' => $empleados , 'compraGenerada' => $p]); 
     
     }
 
-
-    public function agregarCompraTabla (Request $request){
-        
-        $proveedor = $request->get('selectProveedor');
-        $categoria = $request->get('selectCategoria');
-        $nombreProducto = $request->get('selectProductoNombre');
-        $precioUnitario =  $request->get('selectPrecioUnitario');
-        $moneda = $request->get('selectMoneda');
-        $cantidad = $request->input('inputCantidad');
-
-        $articulo = [ $proveedor, $categoria, $nombreProducto, $precioUnitario, $moneda , $cantidad];
-        
-        $empleados = empleadoModel::all();
-        $producto = insumosModel::all();
-
-        $datos = [$producto, $empleados];
-
-        return view('compra',['articulo'=>$articulo],['datos' => $datos],);
+    public function listarHistorialCompra () {
+        $compra = comprasModel::all();
+        return view('historialDeCompra',['compras' => $compra]);
 
     }
+
+    public function cargarDatosCompra(){
+        $empleados = empleadoModel::all();
+        return view('compra',['empleados' => $empleados]);
+
+    }
+
+    public function listarStock(){
+        $compra = comprasModel::all();
+        return view('stock',['stockHabilitado' => $compra]);
+    }
+/*
+
+    
     
     public function cargarDatosCompra(){
        
@@ -63,12 +65,7 @@ class comprasController extends Controller
     
     }
 
-    public function listarHistorialCompra () {
-        $compra = comprasModel::all();
-
-        return view('historialDeCompra',['compras' => $compra]);
-
-    }
+   
 
 
 
@@ -115,36 +112,7 @@ class comprasController extends Controller
  
 
  */
-    public function cargarDatosCompra(){
-       
-        $empleados = empleadoModel::all();
-        $producto = insumosModel::all();
-        $datos = [$producto, $empleados];
-        
-
-         return view('compra',[ 'empleados' => $empleados,'producto' => $producto,]);
-         
-
-
-    }
-
-    public function buscarMarca(Request $request){
-        
-        $listaDeProductos = insumosModel::where('marca','LIKE','%'.$request->get('selectProveedor').'%', 'AND','categoria','LIKE','%'.$request->get('selectCategoria').'%' )->get();
-        
-        $empleados = empleadoModel::all();
-        $producto = insumosModel::all();
-        
-
-        
-        return view('compra',[
-            'empleados' => $empleados,
-            'producto' => $producto,
-            'prodFiltrado' => $listaDeProductos        
-        ]);
-
-        
-    }
+    
 
 
 }

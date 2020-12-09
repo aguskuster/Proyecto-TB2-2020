@@ -30,12 +30,12 @@
                 <th scope="col">Cantidad</th>
                 <th scope="col">Empleado</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Modificar</th>
-                <th scope="col">Eliminar</th>
+                <th scope="col">PDF</th>
+               
             </tr>
         </thead>
 
-        @if ($compras)
+        @isset ($compras)
         @foreach ($compras as $c)
 
             <tbody>
@@ -47,15 +47,15 @@
                     <td> {{ $c->cantidad }} </td>
                     <td> {{ $c->empleado }} </td>
                     <td> {{ $c->created_at }} </td>
-                    <td><a href="/modificarHisotrialCompra/{{ $c->id }}" name='id'><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
-                    <td><a href="/bajaCompra/{{ $c->id }}"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
+                    <td><a href="/generarCompraPDF/{{ $c->id }}"><i style="margin-left:10px;font-size:20px;color:red;"class="fas fa-file-pdf"></i></a></td>
+                   
                 </tr>
 
             </tbody>
 
         @endforeach
         
-        @endif
+        @endisset
 
 
     </table>

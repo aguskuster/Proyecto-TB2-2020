@@ -15,6 +15,7 @@ class ventaController extends Controller
         $venta = new ventaModel;
         $cliente = clienteModel::where('rut',$request->get('selectClienteRut'))->value('empresa');
         $productoPrecio = comprasModel::where('nombreProducto',$request->get('selectProductoNombre'))->value('precioUnitario');
+
         $venta -> clienteRUT = $request->get('selectClienteRut');
         $venta -> clienteNombre = $cliente;
         $venta -> insumoNombre = $request->get('selectProductoNombre');
@@ -63,11 +64,13 @@ class ventaController extends Controller
 
     public function modificarVenta(Request $request){
         $v = ventaModel::find($request->input('id'));
+        $cliente = clienteModel::where('rut',$request->get('selectClienteRut'))->value('empresa');
+        $productoPrecio = comprasModel::where('nombreProducto',$request->get('selectProductoNombre'))->value('precioUnitario');
 
-        $v->clienteRUT = $request->input('clienteRUT');
-        $v->clienteNombre = $request->input('clienteNombre');
-        $v->insumoNombre = $request->input('insumoNombre');
-        $v->insumoPrecio = $request->input('insumoPrecio');
+        $v->clienteRUT = $request->get('selectClienteRut');
+        $v->clienteNombre = $cliente;
+        $v->insumoNombre = $request->get('selectProductoNombre');
+        $v->insumoPrecio = $productoPrecio;
         $v->insumoCantidad = $request->input('insumoCantidad');
         $v->empleadoNombre = $request->input('empleadoNombre');
 
@@ -80,7 +83,14 @@ class ventaController extends Controller
 
     public function listarVentaParaModificar($id){
         $venta = ventaModel::where('id',$id)->first();
-        return view('formulariosModificar/modificarVenta', ['ventaSeleccionado' => $venta]);
+        $empleados = empleadoModel::all();
+        $cliente = clienteModel::all();
+        $producto = comprasModel::all();
+        $datos = [$producto, $empleados , $cliente];
+        return view('formulariosModificar/modificarVenta', ['ventaSeleccionado' => $venta],['datos' => $datos]);
+        
+
+       
     }
  
 

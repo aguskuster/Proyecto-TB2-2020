@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\insumosModel;
+
 use App\empleadoModel;
 use App\comprasModel;
-use App\carritoModel;
+
 
 use App;
 class comprasController extends Controller

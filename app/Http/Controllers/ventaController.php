@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\stockModel;
+use App\comprasModel;
 use App\empleadoModel;
 use App\clienteModel;
 use App\ventaModel;
@@ -46,7 +46,7 @@ class ventaController extends Controller
     public function cargarDatosVenta() {
         $empleados = empleadoModel::all();
         $cliente = clienteModel::all();
-        $producto = stockModel::all();
+        $producto = comprasModel::all();
 
         $datos = [$producto, $empleados , $cliente];
 

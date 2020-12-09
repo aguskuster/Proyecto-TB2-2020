@@ -25,7 +25,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Modificar</th>
                 <th scope="col">Eliminar</th>
-                <th scope="col">PDF</th>
+                
             </tr>
         </thead>
 

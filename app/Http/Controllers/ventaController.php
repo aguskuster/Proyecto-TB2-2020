@@ -13,11 +13,12 @@ class ventaController extends Controller
 
     public function altaVenta (Request $request) {
         $venta = new ventaModel;
-     
+        $cliente = clienteModel::where('rut',$request->get('selectClienteRut'))->value('empresa');
+        $productoPrecio = comprasModel::where('nombreProducto',$request->get('selectProductoNombre'))->value('precioUnitario');
         $venta -> clienteRUT = $request->get('selectClienteRut');
-        $venta -> clienteNombre = $request->get('selectClienteNombre');
+        $venta -> clienteNombre = $cliente;
         $venta -> insumoNombre = $request->get('selectProductoNombre');
-        $venta -> insumoPrecio = $request->get('selectPrecioUnitario');
+        $venta -> insumoPrecio =  $productoPrecio;
         $venta -> insumoCantidad = $request->input('selectProductoCantidad');
         $venta -> empleadoNombre = $request->get('selectVendedor');
         
@@ -34,7 +35,7 @@ class ventaController extends Controller
     }
 
     public function descontarArticulo($articulo){
-        $compra = comprasModel::where('nombreProducto',$articulo,'AND','proveedor', $marca)->first();
+        $compra = comprasModel::where('nombreProducto',$articulo)->first();
 
     }
 

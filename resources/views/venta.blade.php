@@ -15,12 +15,12 @@
             @csrf
 
             <div class="form-group">
-                <label for="selectClienteRut">Cliente RUT</label>
+                <label for="selectClienteRut">Cliente</label>
                 <select name="selectClienteRut" id="selectClienteRut" class="form-control">
 
                     @foreach ($datos[2] as $c)
 
-                        <option value="{{ $c->rut }}">{{ $c->rut }}</option>
+                        <option value="{{ $c->rut }}">{{ $c->empresa }}</option>
 
                     @endforeach
 
@@ -28,27 +28,15 @@
 
             </div>
 
-            <div class="form-group">
-                <label for="selectClienteNombre">Cliente Nombre</label>
-                <select name="selectClienteNombre" id="selectClienteNombre" class="form-control">
-
-                    @foreach ($datos[2] as $c)
-
-                        <option value="{{ $c->empresa }}">{{ $c->empresa }}</option>
-
-                    @endforeach
-
-                </select>
-
-            </div>
+            
 
             <div class="form-group">
-                <label for="selectProductoNombre">Nombre Producto</label>
+                <label for="selectProductoNombre">Producto</label>
                 <select name="selectProductoNombre" id="selectProductoNombre" class="form-control">
 
                     @foreach ($datos[0] as $p)
 
-                        <option value="{{ $p->nombreProducto }}"> {{ $p->nombreProducto }} </option>
+                        <option value="{{ $p->nombreProducto }}"> {{ $p->nombreProducto }}: {{ $p->precioUnitario }} {{ $p->moneda }}</option>
 
                     @endforeach
 
@@ -56,19 +44,6 @@
 
             </div>
 
-            <div class="form-group">
-                <label for="selectPrecioUnitario">Precio Unitario</label>
-                <select name="selectPrecioUnitario" id="selectPrecioUnitario" class="form-control">
-
-                    @foreach ($datos[0] as $p)
-
-                        <option value="{{ $p->precioUnitario }} "> {{ $p->precioUnitario }} {{ $p->moneda }}</option>
-
-                    @endforeach
-
-                </select>
-
-            </div>
 
             <div class="form-group">
                 <label for="selectProductoCantidad">Cantidad</label>

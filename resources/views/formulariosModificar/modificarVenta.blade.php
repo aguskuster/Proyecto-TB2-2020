@@ -55,10 +55,19 @@
                     value="{{ $ventaSeleccionado->insumoCantidad }}" required>
             </div>
 
+
             <div class="form-group">
-                <label for="inputEmpleadoNombre">Empleado</label>
-                <input type="text" class="form-control" name="empleadoNombre" id="empleadoNombre"
-                    value="{{ $ventaSeleccionado->empleadoNombre }}" required>
+                <label for="selectVendedor">Empleado</label>
+                <select name="selectVendedor" id="selectVendedor" class="form-control">
+                    <option value="{{ $ventaSeleccionado->empleadoNombre }}">{{ $ventaSeleccionado->empleadoNombre }}</option>
+                    @foreach ($datos[1] as $e)
+
+                        <option value="{{ $e->nombre }} {{ $e->apellido }}">{{ $e->nombre }} {{ $e->apellido }}</option>
+
+                    @endforeach
+
+                </select>
+
             </div>
 
 

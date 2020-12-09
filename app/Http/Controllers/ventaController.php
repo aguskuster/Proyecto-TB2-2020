@@ -72,7 +72,7 @@ class ventaController extends Controller
         $v->insumoNombre = $request->get('selectProductoNombre');
         $v->insumoPrecio = $productoPrecio;
         $v->insumoCantidad = $request->input('insumoCantidad');
-        $v->empleadoNombre = $request->input('empleadoNombre');
+        $v->empleadoNombre = $request->get('selectVendedor');
 
         $v->save();
         $resultado = self::listarHistorialVenta();

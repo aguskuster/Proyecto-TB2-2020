@@ -7,7 +7,7 @@
     <h3 class="text-center">Compra de Productos</h3>
     <br><br><br>
 
-    <div class="container" style="background:whitesmoke;padding:15px;margin:auto;">
+    <div class="container" style="background:whitesmoke;padding:15px;margin:auto;border-radius:10px;">
 
      
 

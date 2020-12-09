@@ -26,10 +26,10 @@ class comprasController extends Controller
        
         $compra -> save();
 
-        $p = true;
+        
 
-        $empleados = empleadoModel::all();
-        return redirect('compras', ['empleados' => $empleados , 'compraGenerada' => $p]); 
+        $resultado = self::listarHistorialCompra();
+        return $resultado;
     
     }
 
@@ -48,6 +48,41 @@ class comprasController extends Controller
     public function listarStock(){
         $compra = comprasModel::all();
         return view('stock',['stockHabilitado' => $compra]);
+    }
+
+    public function listarProductoParaModificar($id){
+        $compra = comprasModel::where('id',$id)->first();
+        return view('formulariosModificar/modificarStock', ['StockSeleccionadoModificar' => $compra]);
+    }
+
+    public function modificarStock(Request $request){
+        $i = comprasModel::find($request->input('id'));
+        
+        $i->proveedor = $request->input('inputModificarMarca');
+        $i->categoria = $request->input('inputModificarCategoria');
+        $i->nombreProducto = $request->input('inputModificarNombreProducto');
+        $i->precioUnitario = $request->input('inputModificarPrecioUnitario');
+        $i->moneda = $request->input('inputModificarMoneda');
+        $i->cantidad = $request->input('inputModificarCantidad');
+        
+
+        $i->save();
+        $resultado = self::listarStock();
+        return $resultado;
+
+    }
+    
+    public function listarProductoParaEliminar($id){
+        $compra = comprasModel::where('id',$id)->first();
+        return view('formulariosBaja/bajaStock', ['StockSeleccionadoEliminar' => $compra]);
+    }
+
+    public function eliminarStock(Request $request){
+        $stock = comprasModel::find($request->input('id'));
+        $stock->delete();
+      
+        $resultado = self::listarStock();
+        return $resultado;
     }
 /*
 

@@ -9,15 +9,7 @@
 
     <div class="container" style="background:whitesmoke;padding:15px;margin:auto;">
 
-        @isset($compraGenerada)
-
-            <script>
-
-                alert("Compra Generada")
-
-            </script>
-
-        @endisset
+     
 
         <form action="/altaCompra" method="post" class="needs-validation">
             @csrf

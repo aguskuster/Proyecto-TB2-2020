@@ -14,42 +14,42 @@
         @csrf
 
         <div class="form-group">
-            <label for="inputID">ID</label>
-            <input id="inputID" type="text" class="form-control" name="id" value="{{ $StockSeleccionadoModificar -> id }} " readonly>
+            
+            <input id="id" type="text" class="form-control" name="id" value="{{ $StockSeleccionadoModificar -> id }}" hidden>
         </div>
 
         <div class="form-group">
-            <label for="inputproveedor">Proveedor</label>
-            <input type="text" class="form-control" name="proveedor" id="proveedor" value="{{ $StockSeleccionadoModificar -> proveedor }}"  >
+            <label for="inputModificarMarca">Marca</label>
+            <input type="text" class="form-control" name="inputModificarMarca" id="inputModificarMarca" value="{{ $StockSeleccionadoModificar -> proveedor }}"  >
         </div>
 
         <div class="form-group">
-            <label for="inputcategoria">Categoria</label>
-            <input type="text" class="form-control" name="categoria" id="categoria" onkeypress="return isNumericKey(event)"
+            <label for="inputModificarCategoria">Categoria</label>
+            <input type="text" class="form-control" name="inputModificarCategoria" id="inputModificarCategoria" onkeypress="return isNumericKey(event)"
             value="{{ $StockSeleccionadoModificar -> categoria }}">
         </div>
 
         <div class="form-group">
-            <label for="inputNombreProducto">Nombre Producto</label>
-            <input type="text" class="form-control" name="nombreProducto" id="nombreProducto"
+            <label for="inputModificarNombreProducto">Nombre Producto</label>
+            <input type="text" class="form-control" name="inputModificarNombreProducto" id="inputModificarNombreProducto"
             value="{{ $StockSeleccionadoModificar -> nombreProducto }}"  >
         </div>  
 
         <div class="form-group">
-            <label for="inputPrecioUnitario">Precio Unitario</label>
-            <input type="number" class="form-control" name="precioUnitario" id="precioUnitario"
+            <label for="inputModificarPrecioUnitario">Precio Unitario</label>
+            <input type="number" class="form-control" name="inputModificarPrecioUnitario" id="inputModificarPrecioUnitario"
             value="{{ $StockSeleccionadoModificar -> precioUnitario }}"  >
         </div>
 
         <div class="form-group">
-            <label for="inputMoneda">Moneda</label>
-            <input type="text" class="form-control" name="moneda" id="moneda"
+            <label for="inputModificarMoneda">Moneda</label>
+            <input type="text" class="form-control" name="inputModificarMoneda" id="inputModificarMoneda"
             value="{{ $StockSeleccionadoModificar -> moneda }}"  readonly>
         </div>
 
         <div class="form-group">
-            <label for="inputCantidad">Cantidad</label>
-            <input type="number" class="form-control" name="cantidad" id="cantidad"
+            <label for="inputModificarCantidad">Cantidad</label>
+            <input type="number" class="form-control" name="inputModificarCantidad" id="inputModificarCantidad"
             value="{{ $StockSeleccionadoModificar -> cantidad }}"  >
         </div>
         <button type="submit" class="btn btn-info">Modificar Stock</button>

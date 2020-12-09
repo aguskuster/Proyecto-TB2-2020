@@ -28,27 +28,30 @@ class clienteController extends Controller
     public function altaCliente (Request $request){
         self::validateAllInput($request);
 
-        $buscar = clienteModel::where('rut',$request->input('rut'))->first(); 
-        
-        if ($buscar){
-            echo "<script>alert('El rut ingresado esta repetido') </script>";
-            return view('formulariosAlta/altaCliente');
-        } else {
+     
+                try{
+                    $cliente = new clienteModel;
 
-        $cliente = new clienteModel;
+                    $cliente -> rut = $request->input('rut');
+                    $cliente -> empresa = $request->input('empresa');
+                    $cliente -> telefono = $request->input('telefono');
+                    $cliente -> email = $request->input('email');
+                    
+                    $cliente -> save();
+            
+                    
+                    return view('formulariosAlta/altaCliente', ['clienteCreado' => $cliente]);
 
-        $cliente -> rut = $request->input('rut');
-        $cliente -> empresa = $request->input('empresa');
-        $cliente -> telefono = $request->input('telefono');
-        $cliente -> email = $request->input('email');
-        
-        $cliente -> save();
+                }
+                catch(\Exception $error){
+                echo '<script>alert("ERROR: El RUT del cliente ya existe")</script>';
+                    return view('formulariosAlta/altaCliente');
+                }
 
-        
-        return view('formulariosAlta/altaCliente', ['clienteCreado' => $cliente]);
+      
        
         }
-    }   
+      
 
 
 

@@ -60,14 +60,8 @@ class empleadoController extends Controller
 
         self::validateAllInput($request);
 
-        $buscar = empleadoModel::where('ci',$request->input('ci'))->first(); 
-        
-        if ($buscar){
-            echo "<script>alert('La cedula ingresada esta repetida') </script>";
-            return view('formulariosAlta/altaEmpleado');
-        } else {
-           
-            $empleado = new empleadoModel;
+     try {
+        $empleado = new empleadoModel;
 
             $empleado -> ci = $request->input('ci');
             $empleado -> contrasenia = $request->input('contrasenia');
@@ -81,14 +75,14 @@ class empleadoController extends Controller
     
             
             return view('formulariosAlta/altaEmpleado', ['empleadoCreado' => $empleado]);
-        }
-        
 
-        
-
-       
-       
+     } catch (\Exception $error) {
+        echo '<script>alert("ERROR:La Cedula del Empleado ya existe")</script>';
+        return view('formulariosAlta/altaEmpleado');
+     }
     }
+        
+
 
 
 

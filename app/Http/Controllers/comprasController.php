@@ -118,7 +118,7 @@ class comprasController extends Controller
     public function cargarDatosCompra(){
        
         $empleados = empleadoModel::all();
-        $producto = insumosModel::distinct()->get();
+        $producto = insumosModel::all();
         $datos = [$producto, $empleados];
         
 
@@ -133,7 +133,7 @@ class comprasController extends Controller
         $listaDeProductos = insumosModel::where('marca','LIKE','%'.$request->get('selectProveedor').'%', 'AND','categoria','LIKE','%'.$request->get('selectCategoria').'%' )->get();
         
         $empleados = empleadoModel::all();
-        $producto = insumosModel::all()->distinct()->get();
+        $producto = insumosModel::all();
         
 
         

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class empleadoController extends Controller
 {
-    public function autenticarEmpleado(Request $request,Closure $next){
+    public function autenticarEmpleado(Request $request){
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {

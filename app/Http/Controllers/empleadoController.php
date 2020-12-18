@@ -104,7 +104,6 @@ class empleadoController extends Controller
 
         $e = empleadoModel::find($request->input('id'));
        
-        $e -> password = $request->input('contrasenia');
         $e->nombre = $request->input('nombre');
         $e->apellido = $request->input('apellido');
         $e->edad = $request->input('edad');
@@ -113,11 +112,10 @@ class empleadoController extends Controller
 
         $e->save();
         
-        $empleado = empleadoModel::all();
+       
+        self::listarEmpleados();
         
-        
-
-        return view('empleado',['empleados' => $empleado]);
+       
         
 
     }

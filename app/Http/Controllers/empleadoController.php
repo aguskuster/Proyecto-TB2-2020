@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\empleadoModel;
+use Illuminate\Support\Facades\Hash;
+
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,7 +62,7 @@ class empleadoController extends Controller
 
         self::validateAllInput($request);
 
-     try {
+    /*  try { */
         $empleado = new empleadoModel;
 
             $empleado -> ci = $request->input('ci');
@@ -72,14 +74,21 @@ class empleadoController extends Controller
             $empleado -> telefono = $request->input('telefono');
             
             $empleado -> save();
+
+            $user = new \App\User; 
+            $user->name = $request->input('nombre');
+            $user->email = $request->input('email');
+            $user->password = Hash::make($request->input('contrasenia'));
+            $user->save();
+
     
             
             return view('formulariosAlta/altaEmpleado', ['empleadoCreado' => $empleado]);
 
-     } catch (\Exception $error) {
+     /* } catch (\Exception $error) { */
         echo '<script>alert("ERROR:La Cedula del Empleado ya existe")</script>';
         return view('formulariosAlta/altaEmpleado');
-     }
+    /*  } */
     }
         
 

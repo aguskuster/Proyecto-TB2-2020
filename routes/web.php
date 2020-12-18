@@ -17,7 +17,6 @@
 Route::get('/login', function () {
     return view('login');
 });
-
 Route::post('/login','empleadoController@autenticarEmpleado');
 
 
@@ -45,14 +44,14 @@ Route::get('/Empleado','empleadoController@listarEmpleados' );
 
 Route::get('/Insumos','insumosController@listarInsumos' );
 
-Route::get('/Compra','comprasController@cargarDatosCompra');
+Route::get('/Compra','comprasController@cargarDatosCompra')->middleware('autenticacion');
 
 
-Route::get('/Venta','ventaController@cargarDatosVenta' );
+Route::get('/Venta','ventaController@cargarDatosVenta' )->middleware('autenticacion');
 
 Route::get('/historialVenta', 'ventaController@listarHistorialVenta');
 
-Route::get('/historialDeCompra', 'comprasController@listarHistorialCompra'); 
+Route::get('/historialDeCompra', 'comprasController@listarHistorialCompra');
 
 
 
@@ -64,15 +63,15 @@ Route::get('/Stock','comprasController@listarStock');
 Route::get('/altaCliente', function () {
     return view('formulariosAlta/altaCliente');
 })->middleware('autenticacion');
-Route::post('/altaCliente','clienteController@altaCliente');
+Route::post('/altaCliente','clienteController@altaCliente')->middleware('autenticacion');
 
 
 
 
 
 Route::get('/altaEmpleado', function () {
-    return view('formulariosAlta/altaEmpleado')->middleware('autenticacion');
-});
+    return view('formulariosAlta/altaEmpleado');
+})->middleware('autenticacion');
 
 Route::post('/altaEmpleado', 'empleadoController@altaEmpleado')->middleware('autenticacion');
 
@@ -88,7 +87,7 @@ Route::post('/altaInsumo', 'insumosController@altaInsumo')->middleware('autentic
 
 Route::post('/altaVenta', 'ventaController@altaVenta')->middleware('autenticacion');
 
-Route::post('/altaCompra', 'comprasController@altaCompra');
+Route::post('/altaCompra', 'comprasController@altaCompra')->middleware('autenticacion');
 
 
 
@@ -97,22 +96,22 @@ Route::post('/altaCompra', 'comprasController@altaCompra');
 // FORMULARIOS Modificar
 
 
-Route::post('/modificarCliente', 'clienteController@modificarCliente');
+Route::post('/modificarCliente', 'clienteController@modificarCliente')->middleware('autenticacion');
 
 Route::get('/modificarCliente/{id}', 'clienteController@listarClienteParaModificar');
 
 
 
-Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado');
+Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado')->middleware('autenticacion');
 
 Route::get('/modificarEmpleado/{id}', 'empleadoController@listarEmpleadoParaModificar');
 
 
-Route::post('/modificarInsumo', 'insumosController@modificarInsumo');
+Route::post('/modificarInsumo', 'insumosController@modificarInsumo')->middleware('autenticacion');
 
 Route::get('/modificarInsumo/{id}', 'insumosController@listarInsumoParaModificar');
 
-Route::post('/modificarVenta', 'ventaController@modificarVenta');
+Route::post('/modificarVenta', 'ventaController@modificarVenta')->middleware('autenticacion');
 
 Route::get('/modificarVenta/{id}', 'ventaController@listarVentaParaModificar');
 
@@ -120,22 +119,22 @@ Route::get('/modificarStock/{id}', 'comprasController@listarProductoParaModifica
 
 
 
-Route::post('/modificarStock', 'comprasController@modificarStock');
+Route::post('/modificarStock', 'comprasController@modificarStock')->middleware('autenticacion');
 
 
 
 
 // FORMULARIOS Baja
 
-Route::post('/bajaCliente', 'clienteController@eliminarCliente');
+Route::post('/bajaCliente', 'clienteController@eliminarCliente')->middleware('autenticacion');
 Route::get('/bajaCliente/{id}', 'clienteController@listarClienteParaEliminar') ;
 
 
-Route::post('/bajaEmpleado', 'empleadoController@eliminarEmpleado');
+Route::post('/bajaEmpleado', 'empleadoController@eliminarEmpleado')->middleware('autenticacion');
 Route::get('/bajaEmpleado/{id}', 'empleadoController@listarEmpleadoParaEliminar') ;
 
 
-Route::post('/bajaInsumo', 'insumosController@eliminarInsumo');
+Route::post('/bajaInsumo', 'insumosController@eliminarInsumo')->middleware('autenticacion');
 Route::get('/bajaInsumo/{id}', 'insumosController@listarInsumoParaEliminar') ;
 
 
@@ -145,11 +144,11 @@ Route::get('/bajaVenta/{id}', 'ventaController@listarVentaParaEliminar');
 
 
 Route::get('/baja/{id}', 'comprasController@listarProductoParaEliminar') ; 
-Route::post('/bajaStock', 'comprasController@eliminarStock'); 
+Route::post('/bajaStock', 'comprasController@eliminarStock')->middleware('autenticacion'); 
 
 
 
 // GENERAR REPORTES
 
 
-Route::get('/generarCompraPDF/{id}','comprasController@generarPDF');
+Route::get('/generarCompraPDF/{id}','comprasController@generarPDF')->middleware('autenticacion');

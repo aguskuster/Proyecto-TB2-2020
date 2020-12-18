@@ -73,9 +73,9 @@ Route::post('/altaCliente','clienteController@altaCliente')->middleware('autenti
 
 Route::get('/altaEmpleado', function () {
     return view('formulariosAlta/altaEmpleado');
-})->middleware('autenticacion');
+});
 
-Route::post('/altaEmpleado', 'empleadoController@altaEmpleado')->middleware('autenticacion');
+Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
 
 
 

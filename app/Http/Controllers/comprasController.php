@@ -87,19 +87,16 @@ class comprasController extends Controller
 
     public function generarPDF($id){
         $compra = comprasModel::where('id',$id)->first();
-
+        $formulario= "";
         $pdf = App::make('dompdf.wrapper');
 
-        $formulario = `
-                        
-        
-        <p> {{$compra -> proveedor }} </p>
+        $formulario = $formulario." <h1>PACO EL SHOW VECINO</h1> ";
+        $formulario = $formulario."  <p>PRESENTA LA FAMILIA DE LOS PITOS ESCARLATA</p> ";
+        $formulario = $formulario."  <br> ";
+        $formulario = $formulario."  <br> ";
+        $formulario = $formulario." <h2>PACO EL PESHOO</h2>  ";
+     
 
-
-
-
-
-                      `;
 
         $pdf ->loadHTML($formulario);
         return $pdf->stream();

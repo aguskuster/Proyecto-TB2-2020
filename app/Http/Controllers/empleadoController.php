@@ -62,11 +62,11 @@ class empleadoController extends Controller
 
         self::validateAllInput($request);
 
-    /*  try { */
+      try { 
         $empleado = new empleadoModel;
 
             $empleado -> ci = $request->input('ci');
-            $empleado -> contrasenia = $request->input('contrasenia');
+            $empleado -> password = Hash::make($request->input('contrasenia'));
             $empleado -> nombre = $request->input('nombre');
             $empleado -> apellido = $request->input('apellido');
             $empleado -> edad = $request->input('edad');
@@ -74,21 +74,13 @@ class empleadoController extends Controller
             $empleado -> telefono = $request->input('telefono');
             
             $empleado -> save();
-
-            $user = new \App\User; 
-            $user->name = $request->input('nombre');
-            $user->email = $request->input('email');
-            $user->password = Hash::make($request->input('contrasenia'));
-            $user->save();
-
-    
-            
+     
             return view('formulariosAlta/altaEmpleado', ['empleadoCreado' => $empleado]);
 
-     /* } catch (\Exception $error) { */
+     } catch (\Exception $error) { 
         echo '<script>alert("ERROR:La Cedula del Empleado ya existe")</script>';
         return view('formulariosAlta/altaEmpleado');
-    /*  } */
+     } 
     }
         
 
@@ -112,7 +104,7 @@ class empleadoController extends Controller
 
         $e = empleadoModel::find($request->input('id'));
        
-        $e -> contrasenia = $request->input('contrasenia');
+        $e -> password = $request->input('contrasenia');
         $e->nombre = $request->input('nombre');
         $e->apellido = $request->input('apellido');
         $e->edad = $request->input('edad');

@@ -1,11 +1,11 @@
 @include('templates/header')
-
+    
 <div class="container">
 
    
 
     <br><br>
-    <h3 class="text-center">Ventas de Insumos</h3>
+    <h3 class="text-center ">Ventas de Insumos</h3>
     <br><br><br>
 
     <div class="container" style="background:whitesmoke;padding:10px;border-radius:10px;">

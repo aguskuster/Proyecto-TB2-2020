@@ -71,9 +71,9 @@ Route::post('/altaCliente','clienteController@altaCliente')->middleware('autenti
 
 Route::get('/altaEmpleado', function () {
     return view('formulariosAlta/altaEmpleado');
-})->middleware('autenticacion');
+});
 
-Route::post('/altaEmpleado', 'empleadoController@altaEmpleado')->middleware('autenticacion');
+Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
 
 
 
@@ -102,7 +102,7 @@ Route::get('/modificarCliente/{id}', 'clienteController@listarClienteParaModific
 
 
 
-Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado')->middleware('autenticacion');
+Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado');
 
 Route::get('/modificarEmpleado/{id}', 'empleadoController@listarEmpleadoParaModificar');
 
@@ -130,7 +130,7 @@ Route::post('/bajaCliente', 'clienteController@eliminarCliente')->middleware('au
 Route::get('/bajaCliente/{id}', 'clienteController@listarClienteParaEliminar') ;
 
 
-Route::post('/bajaEmpleado', 'empleadoController@eliminarEmpleado')->middleware('autenticacion');
+Route::post('/bajaEmpleado', 'empleadoController@eliminarEmpleado');
 Route::get('/bajaEmpleado/{id}', 'empleadoController@listarEmpleadoParaEliminar') ;
 
 

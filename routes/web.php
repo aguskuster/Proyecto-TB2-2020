@@ -72,7 +72,7 @@ Route::post('/altaCliente','clienteController@altaCliente')->middleware('autenti
 
 
 Route::get('/altaEmpleado', function () {
-    return view('formulariosAlta/altaEmpleado')->middleware('autenticacion');
+    return view('formulariosAlta/altaEmpleado');
 })->middleware('autenticacion');
 
 Route::post('/altaEmpleado', 'empleadoController@altaEmpleado')->middleware('autenticacion');
@@ -80,8 +80,8 @@ Route::post('/altaEmpleado', 'empleadoController@altaEmpleado')->middleware('aut
 
 
 Route::get('/altaInsumo', function () {
-    return view('formulariosAlta/altaInsumo')->middleware('autenticacion');
-});
+    return view('formulariosAlta/altaInsumo');
+})->middleware('autenticacion');
 
 Route::post('/altaInsumo', 'insumosController@altaInsumo')->middleware('autenticacion');
 

@@ -27,6 +27,7 @@ class EmpleadoTable extends Migration
 
             $table->unique('ci');
             $table->softDeletes();
+            
         });
     }
 

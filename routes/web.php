@@ -45,7 +45,7 @@ Route::get('/Empleado','empleadoController@listarEmpleados' );
 
 Route::get('/Insumos','insumosController@listarInsumos' );
 
-Route::get('/Compra','comprasController@cargarDatosCompra' );
+Route::get('/Compra','comprasController@cargarDatosCompra');
 
 
 Route::get('/Venta','ventaController@cargarDatosVenta' );
@@ -63,7 +63,7 @@ Route::get('/Stock','comprasController@listarStock');
 
 Route::get('/altaCliente', function () {
     return view('formulariosAlta/altaCliente');
-});
+})->middleware('autenticacion');
 Route::post('/altaCliente','clienteController@altaCliente');
 
 
@@ -71,22 +71,22 @@ Route::post('/altaCliente','clienteController@altaCliente');
 
 
 Route::get('/altaEmpleado', function () {
-    return view('formulariosAlta/altaEmpleado');
+    return view('formulariosAlta/altaEmpleado')->middleware('autenticacion');
 });
 
-Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
+Route::post('/altaEmpleado', 'empleadoController@altaEmpleado')->middleware('autenticacion');
 
 
 
 Route::get('/altaInsumo', function () {
-    return view('formulariosAlta/altaInsumo');
+    return view('formulariosAlta/altaInsumo')->middleware('autenticacion');
 });
 
 
-Route::post('/altaInsumo', 'insumosController@altaInsumo');
+Route::post('/altaInsumo', 'insumosController@altaInsumo')->middleware('autenticacion');
 
 
-Route::post('/altaVenta', 'ventaController@altaVenta');
+Route::post('/altaVenta', 'ventaController@altaVenta')->middleware('autenticacion');
 
 Route::post('/altaCompra', 'comprasController@altaCompra');
 

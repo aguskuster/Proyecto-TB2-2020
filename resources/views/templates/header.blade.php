@@ -45,14 +45,27 @@
         em{
             color:red;
         }
-
+        body{
+            height: 100vh;
+            width: 100vw;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(https://images.unsplash.com/photo-1597938163315-26d8dd6f9d81?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+        }
+        table{
+            background-color: white;
+        }
     </style>
+    
 </head>
 
 <body onkeydown="javascript:Disable_Control_C()">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Insumos Inf.</a>
+    <nav class="navbar navbar-expand-lg" style=" background-color: #26292b;">
+        <a class="navbar-brand" href="/" style=" color: #ffffff;">Insumos Inf.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,20 +74,20 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/Empleado">Empleados</a>
+                    <a class="nav-link" href="/Empleado" style=" color: #ffffff;">Empleados</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Cliente">Clientes</a>
+                    <a class="nav-link" href="/Cliente" style=" color: #ffffff;">Clientes</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/Stock">Stock</a>
+                    <a class="nav-link" href="/Stock" style=" color: #ffffff;">Stock</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Compra">Compras</a>
+                    <a class="nav-link" href="/Compra" style=" color: #ffffff;">Compras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Venta">Ventas</a>
+                    <a class="nav-link" href="/Venta" style=" color: #ffffff;">Ventas</a>
                 </li>
 
 
@@ -82,11 +95,11 @@
         </div>
         @isset(auth()->user()->nombre)
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" style="color: #ffffff;background-color: #474b4f;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Bienvenido {{ auth()->user()->nombre }}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item  btn-outline-danger" href="/logout">Logout</a>
+              <a class="dropdown-item" href="/logout" style="color:red;">Logout</a>
     
             </div>
           </div>

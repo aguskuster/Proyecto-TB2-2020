@@ -1,7 +1,6 @@
 @include('templates/header')
 
-
-<div class="container">
+<div class="container" >
     <br><br><br>
 
     <h1 class="text-center">Interfaz Empleados</h1>

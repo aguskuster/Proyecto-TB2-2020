@@ -166,4 +166,4 @@ Route::post('/bajaStock', 'comprasController@eliminarStock')->middleware('autent
 // GENERAR Reportes
 
 
-Route::get('/generarCompraPDF/{id}','pdfController@PDFProductos');
+Route::get('/generarCompraPDF','pdfController@PDFProductos');

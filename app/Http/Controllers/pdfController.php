@@ -11,12 +11,12 @@ class pdfController extends Controller
 {
 
 
-    public function PDFProductos($id){
+    public function PDFProductos(){
      
-        $compras = comprasModel::where('id',$id)->first();
+        $compras = comprasModel::all();
 
         $pdf = PDF::loadView('./reportes/reporteCompras', compact('compras'));
 
-        return $pdf->download('ReporteCompra.pdf');
+        return $pdf->stream('ReporteCompra.pdf');
     }
 }

@@ -47,7 +47,7 @@
                     <td> {{ $c->cantidad }} </td>
                     <td> {{ $c->empleado }} </td>
                     <td> {{ $c->created_at }} </td>
-                    <td><a href="/generarCompraPDF/{{ $c->id }}"><i style="margin-left:10px;font-size:20px;color:red;"class="fas fa-file-pdf"></i></a></td>
+                    <td><a href="/generarCompraPDF"><i style="margin-left:10px;font-size:20px;color:red;"class="fas fa-file-pdf"></i></a></td>
                    
                 </tr>
 

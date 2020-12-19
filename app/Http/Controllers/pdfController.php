@@ -11,7 +11,7 @@ class pdfController extends Controller
 {
 
 
-    public function generarPDFIndividual(){
+    public function generarPDFIndividual($id){
      
         $compras = comprasModel::where('id',$id)->first();
 

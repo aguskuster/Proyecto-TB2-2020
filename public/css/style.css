@@ -1,4 +1,67 @@
-#carlos {
+header{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to top, rgb(161, 140, 209, 0.2) 0%, rgb(251, 194, 235, 0.3) 100%), url(https://images.unsplash.com/photo-1491406213019-05b162a72c20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1942&q=80);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
-    color:green;
+.contendor{
+    position: absolute;
+    width: 300px;
+    border: 2px solid #337bac;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 3px -1px 20px 3px rgba(29, 108, 160, 0.72);
+    background-color: rgb(127, 170, 197);
+    height: 370px;
+    border-radius: 10px;
+}
+
+.imputss{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    
+    height: 3rem;
+   
+
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    outline: none;
+    width: 80%;
+}
+label{
+    color: white;
+    margin-top: 45px;
+    
+}
+.boton{
+    color: black;
+    background-color: white;
+    border-radius: 32px;
+    cursor:pointer;
+    width: 80%;
+    height: 2.5rem;
+    font-weight:500;
+    margin-top: 25px;
+   
+}
+
+.boton:hover{
+    background-color: #6498bb;
+    outline: none;
+}
+
+.error{
+    width: 80%;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    transform: translateX(13%);
+    height: 1.5rem;
 }

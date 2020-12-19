@@ -7,8 +7,9 @@
     <meta name="author" content="">
     <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Login</title>
 
+    <link rel="stylesheet" href="css/style.css">
     <link rel="canonical" href="index.html">
 
     <!-- Bootstrap core CSS -->
@@ -19,20 +20,41 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin" method="post" action="/login">
-        
-        @csrf
-        @isset($error)
+    <header>
 
-            <h1 class="h3 mb-3 font-weight-normal">Fallo la autenticacion</h1>
-        @endisset
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <form class="form-signin" method="post" action="/login">
+        @csrf
+
+        <div class="contendor">
+          <label for="inputEmail">Correo Electronico</label>
+    
+          <input type="email" id="inputEmail" name="email" class="imputss" placeholder="Ingrese correo" required autofocus>
+    
+          <label for="inputPassword">Contraseña</label>
+    
+          <input type="password" name="password" id="inputPassword" class="imputss" placeholder="Ingrese Contraseña" required>
+          <div>
+
+          <button  class="boton" type="submit">Iniciar Sesion</button>
+         
+          @isset($error)
+          <div class="error">
+            Fallo la autenticacion
+          </div>
+          @endisset
+        </div>
       
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+   
+
+
+
+
     </form>
+    </header>
+
+   
+
+
+
   </body>
 </html>

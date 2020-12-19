@@ -22,7 +22,7 @@ class comprasController extends Controller
         $compra -> precioUnitario = $request->input('inputPrecioUnitario');
         $compra -> moneda = $request->input('inputMoneda');
         $compra -> cantidad = $request->input('inputProductoCantidad');
-        $compra -> empleado = $request->get('selectVendedor');
+        $compra -> empleado = $request->input('inputEmpleado');
        
         $compra -> save();
 
@@ -85,22 +85,7 @@ class comprasController extends Controller
         return $resultado;
     }
 
-    public function generarPDF($id){
-        $compra = comprasModel::where('id',$id)->first();
-        $formulario= "";
-        $pdf = App::make('dompdf.wrapper');
-
-        $formulario = $formulario." <h1>PACO EL SHOW VECINO</h1> ";
-        $formulario = $formulario."  <p>PRESENTA LA FAMILIA DE LOS PITOS ESCARLATA</p> ";
-        $formulario = $formulario."  <br> ";
-        $formulario = $formulario."  <br> ";
-        $formulario = $formulario." <h2>PACO EL PESHOO</h2>  ";
-     
-
-
-        $pdf ->loadHTML($formulario);
-        return $pdf->stream();
-    }
+   
 
 
 }

@@ -55,15 +55,7 @@
 
             <div class="form-group">
                 <label for="selectVendedor">Vendedor</label>
-                <select name="selectVendedor" id="selectVendedor" class="form-control">
-
-                    @foreach ($datos[1] as $e)
-
-                        <option value="{{ $e->nombre }} {{ $e->apellido }}">{{ $e->nombre }} {{ $e->apellido }}</option>
-
-                    @endforeach
-
-                </select>
+                <input type="text" name="inputVendedor" class="form-control" readonly value="{{ auth()->user()->nombre }} {{ auth()->user()->apellido }}">
 
             </div>
 

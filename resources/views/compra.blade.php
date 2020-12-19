@@ -9,7 +9,7 @@
 
     <div class="container" style="background:whitesmoke;padding:15px;margin:auto;border-radius:10px;">
 
-     
+
 
         <form action="/altaCompra" method="post" class="needs-validation">
             @csrf
@@ -60,21 +60,15 @@
 
 
             <div class="form-group">
-                <label for="selectVendedor">Empleado</label>
-                <select name="selectVendedor" id="selectVendedor" class="form-control" style="width:90%">
+                <label for="inputEmpleado">Empleado</label>
 
-                    @foreach ($empleados as $e)
-
-                        <option value="{{ $e->nombre }} {{ $e->apellido }}">{{ $e->nombre }} {{ $e->apellido }}</option>
-
-                    @endforeach
-
-                </select>
+                <input type="text" style="width:90%" name="inputEmpleado" class="form-control" readonly
+                    value="{{ auth()->user()->nombre }} {{ auth()->user()->apellido }}">
 
             </div>
             <div class="form-group">
 
-                <input type="submit" class="btn btn-lng btn-success float-right" value="Comprar"
+                <input type="submit"  class="btn btn-lng btn-success float-right" value="Comprar"
                     style="margin-right:10%">
             </div>
             <br><br>

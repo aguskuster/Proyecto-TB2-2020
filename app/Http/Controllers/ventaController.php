@@ -21,7 +21,7 @@ class ventaController extends Controller
         $venta -> insumoNombre = $request->get('selectProductoNombre');
         $venta -> insumoPrecio =  $productoPrecio;
         $venta -> insumoCantidad = $request->input('selectProductoCantidad');
-        $venta -> empleadoNombre = $request->get('selectVendedor');
+        $venta -> empleadoNombre = $request->input('inputVendedor');
         
        
       

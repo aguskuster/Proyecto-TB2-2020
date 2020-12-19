@@ -2,10 +2,10 @@
 
 @isset($ventaCreada)
 
-<script>
-    alert("Venta Creada")
+    <script>
+        alert("Venta Creada")
 
-</script>
+    </script>
 
 @endisset
 
@@ -16,10 +16,18 @@
     <h1 class="text-center">Historial de Compra</h1>
 
     <br><br>
+    <form action="/generarCompraPDFFiltrado" method="get" class="mb-3">
+        <button type="submit" class="btn btn-danger float-right mr-1">Generar PDF</button>
+        
+        <select name="tipoBuscar" id="tipoBuscar" class="form-control d-inline float-right mr-1" style="width:10%">
+            <option value="month">Mes</option>
+            <option value="day">Dia</option>
+            <option value="year">Año</option>
+        </select>
+        <input type="text" name="fecha" class="form-control d-inline float-right mr-1" style="width:10%">
+    </form>
 
-
-
-
+    
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -31,30 +39,31 @@
                 <th scope="col">Empleado</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">PDF</th>
-               
+
             </tr>
         </thead>
 
-        @isset ($compras)
-        @foreach ($compras as $c)
+        @isset($compras)
+            @foreach ($compras as $c)
 
-            <tbody>
-                <tr>
-                    <th scope="row"> {{ $c->proveedor }} </th>
-                    <td> {{ $c->categoria }} </td>
-                    <td> {{ $c->nombreProducto }} </td>
-                    <td> {{ $c->precioUnitario }} {{ $c->moneda }}  </td>
-                    <td> {{ $c->cantidad }} </td>
-                    <td> {{ $c->empleado }} </td>
-                    <td> {{ $c->created_at }} </td>
-                    <td><a href="/generarCompraPDF"><i style="margin-left:10px;font-size:20px;color:red;"class="fas fa-file-pdf"></i></a></td>
-                   
-                </tr>
+                <tbody>
+                    <tr>
+                        <th scope="row"> {{ $c->proveedor }} </th>
+                        <td> {{ $c->categoria }} </td>
+                        <td> {{ $c->nombreProducto }} </td>
+                        <td> {{ $c->precioUnitario }} {{ $c->moneda }} </td>
+                        <td> {{ $c->cantidad }} </td>
+                        <td> {{ $c->empleado }} </td>
+                        <td> {{ $c->created_at }} </td>
+                        <td><a href="/generarVentaPDF/{{ $c->id }}"><i style="margin-left:10px;font-size:20px;color:red;" class="fas fa-file-pdf"></i></a></td>
+                                   
 
-            </tbody>
+                    </tr>
 
-        @endforeach
-        
+                </tbody>
+
+            @endforeach
+
         @endisset
 
 

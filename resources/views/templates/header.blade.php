@@ -80,7 +80,7 @@
 
             </ul>
         </div>
-      
+        @isset(auth()->user()->nombre)
         <p class="my-2 my-sm-0 mr-3" style="color:white">Bienvenido {{ auth()->user()->nombre }}</p>
-        
+        @endisset   
     </nav>

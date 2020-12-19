@@ -81,6 +81,14 @@
             </ul>
         </div>
         @isset(auth()->user()->nombre)
-        <p class="my-2 my-sm-0 mr-3" style="color:white">Bienvenido {{ auth()->user()->nombre }}</p>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Bienvenido {{ auth()->user()->nombre }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item  btn-outline-danger" href="/logout">Logout</a>
+    
+            </div>
+          </div>
         @endisset   
     </nav>

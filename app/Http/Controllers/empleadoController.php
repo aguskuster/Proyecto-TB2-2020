@@ -98,7 +98,7 @@ class empleadoController extends Controller
  
 
     public function modificarEmpleado(Request $request){
-        self::validateAllInput($request);
+       
 
         
 

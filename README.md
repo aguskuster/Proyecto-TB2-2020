@@ -1,3 +1,35 @@
+Iniciar Tinker:
+
+ php artisan tinker
+
+Crear usuario con Tinker:
+
+$user = new App\empleadoModel; 
+$user->ci = '12345678'; 
+$user->nombre = 'Gonza';
+$user->apellido = 'Martinez';
+$user->email = 'ggMartinez@gmail.com';
+$user->password = Hash::make('123456789');
+$user->edad = '30';
+$user->telefono = '099929292';
+$user->save();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Miro y Trello #
 
 https://miro.com/welcomeonboard/CLoc2tHiWjiWMcKf2AnsV1IVcT40jLZUrUpva7GrrEIAdzn1jh8CbTPomJnr3WrF
@@ -25,14 +57,6 @@ Ejecutar:
 
 
 docker exec -ti laravel_mysql mysql -u root
-
-Iniciar Tinker: php artisan tinker
-
-Crear usuario con Tinker:
-$user = new App\User; 
-$user->name = 'nombre'; $user->email = 'un@mail.com';
-$user->password = Hash::make('12345');
-$user->save();
 
 
 

@@ -73,9 +73,9 @@ Route::post('/altaCliente','clienteController@altaCliente')->middleware('autenti
 
 Route::get('/altaEmpleado', function () {
     return view('formulariosAlta/altaEmpleado');
-});
+})->middleware('autenticacion');
 
-Route::post('/altaEmpleado', 'empleadoController@altaEmpleado');
+Route::post('/altaEmpleado', 'empleadoController@altaEmpleado')->middleware('autenticacion');
 
 
 
@@ -166,17 +166,17 @@ Route::post('/bajaStock', 'comprasController@eliminarStock')->middleware('autent
 // GENERAR Reportes
 
 
-Route::get('/generarCompraPDF/{id}','pdfController@generarPDFIndividualVenta');
+Route::get('/generarCompraPDF/{id}','pdfController@generarPDFIndividualVenta')->middleware('autenticacion');
 
-Route::get('/generarCompraPDFFiltrado','pdfController@generarPDFCompraFiltrado');
+Route::get('/generarCompraPDFFiltrado','pdfController@generarPDFCompraFiltrado')->middleware('autenticacion');
 
 
 
-Route::get('/generarVentaPDF/{id}','pdfController@generarPDFIndividualVenta');
+Route::get('/generarVentaPDF/{id}','pdfController@generarPDFIndividualVenta')->middleware('autenticacion');
 
-Route::get('/generarVentaPDFFiltrado','pdfController@generarPDFVentaFiltrado');
+Route::get('/generarVentaPDFFiltrado','pdfController@generarPDFVentaFiltrado')->middleware('autenticacion');
 
-Route::get('/generarPDFstock','pdfController@generarPDFStock');
+Route::get('/generarPDFstock','pdfController@generarPDFStock')->middleware('autenticacion');
 // LOGOUT Empleado
 
 Route::get('/logout','empleadoController@logout');

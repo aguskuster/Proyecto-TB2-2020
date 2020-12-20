@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App;
 use PDF;
 use App\comprasModel;
+use App\ventaModel;
 use Illuminate\Http\Request;
 
 class pdfController extends Controller
@@ -35,9 +36,9 @@ class pdfController extends Controller
 
     public function generarPDFIndividualVenta($id){
      
-        $compras = ventaModel::where('id',$id)->first();
+        $ventas = ventaModel::where('id',$id)->first();
 
-        $pdf = PDF::loadView('./reportes/reporteComprasIndividual', compact('compras'));
+        $pdf = PDF::loadView('./reportes/reporteVentasIndividual', compact('ventas'));
 
         return $pdf->stream('ReporteVenta.pdf');
     }
@@ -49,8 +50,8 @@ class pdfController extends Controller
             $mes = $request->input('mes');
             $anio = $request->input('anio');
 
-            $compras = ventaModel::where('anio','LIKE',$anio)->where('mes','LIKE',$mes)->where('dia','LIKE',$dia)->get();
-            $pdf = PDF::loadView('./reportes/reporteCompras', compact('compras'));
+            $ventas = ventaModel::where('anio','LIKE',$anio)->where('mes','LIKE',$mes)->where('dia','LIKE',$dia)->get();
+            $pdf = PDF::loadView('./reportes/reporteVentas', compact('ventas'));
             return $pdf->stream('ReporteVenta.pdf');
     }
 }

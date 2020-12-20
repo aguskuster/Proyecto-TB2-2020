@@ -17,7 +17,12 @@
 
     <br><br>
 
-
+    <form action="/generarVentaPDFFiltrado" method="get" class="mb-3">
+        <button type="submit" class="btn btn-danger float-right mr-1">Generar PDF</button>
+        <input placeholder="año" type="number" name="anio" class="form-control d-inline float-right mr-1" style="width:10%">
+        <input placeholder="mes" type="number" name="mes" class="form-control d-inline float-right mr-1" style="width:10%">
+        <input placeholder="dia" type="number" name="dia" class="form-control d-inline float-right mr-1" style="width:10%">
+    </form>
 
 
     <table class="table">
@@ -47,7 +52,7 @@
                     <td> {{ $v->insumoPrecio }} USD </td>
                     <td> {{ $v->insumoCantidad }} </td>
                     <td> {{ $v->empleadoNombre }} </td>
-                    <td> {{ $v->created_at }} </td>
+                    <td> {{ $v->dia }}/{{ $v->mes }}/{{ $v->anio }}</td>
                     <td><a href="/modificarVenta/{{ $v->id }}" name='id'><i style="font-size:20px;margin-left:20px;"class="fas fa-edit"></i></a></td>
                     <td><a href="/bajaVenta/{{ $v->id }}"><i style="font-size:20px;margin-left:20px;color:red;"class="fas fa-user-times"></i></a></td>
                     <td><a href="/generarVentaPDF/{{ $v->id }}"><i style="margin-left:10px;font-size:20px;color:red;"class="fas fa-file-pdf"></i></a></td>

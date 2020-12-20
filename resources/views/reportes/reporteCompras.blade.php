@@ -52,7 +52,7 @@
                     <td> {{ $c->precioUnitario }} {{ $c->moneda }}  </td>
                     <td> {{ $c->cantidad }} </td>
                     <td> {{ $c->empleado }} </td>
-                    <td> {{ $c->created_at }} </td>
+                    <td> {{ $c->dia }}/{{ $c->mes }}/{{ $c->anio }} </td>
                   </tr>
                  @endforeach
                   

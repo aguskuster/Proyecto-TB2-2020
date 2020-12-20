@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Reporte de Compra</title>
+    <title>Reporte de Venta</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <div class="container border p-1 border-dark mb-5">
              <center><h5>Datos de empleado</h5></center>
              <hr>
-            <label class="d-inline" for="nombreEmpleado">Autor del Archivo:</label> <p class="d-inline"> {{ auth()->user()->nombre }} </p> <br> 
+            <label class="d-inline" for="nombreEmpleado">Empleado :</label> <p class="d-inline"> {{ auth()->user()->nombre }}  {{ auth()->user()->apellido }}  </p> <br> 
             <label class="d-inline" for="nombreEmpleado">Forma de Pago :</label> <p class="d-inline">Tarjeta</p> <br>
         
         </div>
@@ -33,8 +33,8 @@
             <table class="table border">
                 <thead>
                   <tr>
-                    <th scope="col">Proveedor</th>
-                    <th scope="col">Categoria</th>
+                    <th scope="col">RUT</th>
+                    <th scope="col">Empresa</th>
                     <th scope="col">Producto</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
@@ -44,20 +44,21 @@
                   </tr>
                 </thead>
                 <tbody>
-           
+                @foreach ($ventas as $v)
                   <tr>
-                    <th scope="row"> {{ $compras->proveedor }} </th>
-                    <td> {{ $compras->categoria }} </td>
-                    <td> {{ $compras->nombreProducto }} </td>
-                    <td> {{ $compras->precioUnitario }} {{ $compras->moneda }}  </td>
-                    <td> {{ $compras->cantidad }} </td>
-                    <td> {{ $compras->empleado }} </td>
-                    <td> {{ $compras->dia }}/{{ $compras->mes }}/{{ $compras->anio }} </td>
+                    <th scope="row"> {{ $v->clienteRUT }} </th>
+                    <td> {{ $v->clienteNombre }} </td>
+                    <td> {{ $v->insumoNombre }} </td>
+                    <td> {{ $v->insumoPrecio }} USD </td>
+                    <td> {{ $v->insumoCantidad }} </td>
+                    <td> {{ $v->empleadoNombre }} </td>
+                    <td> {{ $v->dia }}/{{ $v->mes }}/{{ $v->anio }} </td>
                   </tr>
+                 @endforeach
                   
                 </tbody>
               </table>
-              
+             
   
 
         <hr>

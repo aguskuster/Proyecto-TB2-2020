@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Reporte de Compra</title>
+    <title>Reporte de Venta</title>
 </head>
 
 <body>
@@ -33,8 +33,8 @@
             <table class="table border">
                 <thead>
                   <tr>
-                    <th scope="col">Proveedor</th>
-                    <th scope="col">Categoria</th>
+                    <th scope="col">RUT</th>
+                    <th scope="col">Empresa</th>
                     <th scope="col">Producto</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
@@ -46,13 +46,13 @@
                 <tbody>
            
                   <tr>
-                    <th scope="row"> {{ $compras->proveedor }} </th>
-                    <td> {{ $compras->categoria }} </td>
-                    <td> {{ $compras->nombreProducto }} </td>
-                    <td> {{ $compras->precioUnitario }} {{ $compras->moneda }}  </td>
-                    <td> {{ $compras->cantidad }} </td>
-                    <td> {{ $compras->empleado }} </td>
-                    <td> {{ $compras->dia }}/{{ $compras->mes }}/{{ $compras->anio }} </td>
+                    <th scope="row"> {{ $ventas->clienteRUT }} </th>
+                    <td> {{ $ventas->clienteNombre }} </td>
+                    <td> {{ $ventas->insumoNombre }} </td>
+                    <td> {{ $ventas->insumoPrecio }} USD</td>
+                    <td> {{ $ventas->insumoCantidad }} </td>
+                    <td> {{ $ventas->empleadoNombre }} </td>
+                    <td> {{ $ventas->dia }}/{{ $ventas->mes }}/{{ $ventas->anio }} </td>
                   </tr>
                   
                 </tbody>

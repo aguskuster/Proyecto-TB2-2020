@@ -106,7 +106,7 @@ Route::get('/modificarCliente/{id}', 'clienteController@listarClienteParaModific
 
 
 
-Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado')->middleware('autenticacion');
+Route::post('/modificarEmpleado', 'empleadoController@modificarEmpleado');
 
 Route::get('/modificarEmpleado/{id}', 'empleadoController@listarEmpleadoParaModificar')->middleware('autenticacion');
 

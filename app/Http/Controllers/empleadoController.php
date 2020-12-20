@@ -113,9 +113,11 @@ class empleadoController extends Controller
         $e->save();
         
        
-        self::listarEmpleados();
+        $empleados = empleadoModel::all();
+
+        return view('empleado', ['empleados' => $empleados]);
         
-       
+        
         
 
     }
@@ -150,6 +152,7 @@ class empleadoController extends Controller
     public function logout(){
 
         Auth::logout();
+
     
         return redirect('/');
 

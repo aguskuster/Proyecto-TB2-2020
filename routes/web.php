@@ -176,6 +176,7 @@ Route::get('/generarVentaPDF/{id}','pdfController@generarPDFIndividualVenta');
 
 Route::get('/generarVentaPDFFiltrado','pdfController@generarPDFVentaFiltrado');
 
+Route::get('/generarPDFstock','pdfController@generarPDFStock');
 // LOGOUT Empleado
 
 Route::get('/logout','empleadoController@logout');

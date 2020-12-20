@@ -54,4 +54,11 @@ class pdfController extends Controller
             $pdf = PDF::loadView('./reportes/reporteVentas', compact('ventas'));
             return $pdf->stream('ReporteVenta.pdf');
     }
+
+    public function generarPDFStock(Request $request){
+        
+        $stock = comprasModel::all();
+        $pdf = PDF::loadView('./reportes/reporteStock', compact('stock'));
+        return $pdf->stream('listadoStock.pdf');
+}
 }

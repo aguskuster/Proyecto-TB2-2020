@@ -9,7 +9,7 @@
     <br><br><br>
 
 
-
+    <a href="/generarPDFstock"><button class="btn btn-danger float-right">Generar PDF</button></a>
     
     <table class="table">
         <thead class="thead-dark">

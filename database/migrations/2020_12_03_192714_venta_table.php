@@ -21,7 +21,11 @@ class VentaTable extends Migration
             $table->string('insumoPrecio');
             $table->string('insumoCantidad');
             $table->string('empleadoNombre');
-            $table->timestamp('created_at')->useCurrent();
+            
+            
+            $table->string('dia');
+            $table->string('mes');
+            $table->string('anio');
             $table->timestamp('updated_at')->useCurrent();
             $table->softDeletes();
         });

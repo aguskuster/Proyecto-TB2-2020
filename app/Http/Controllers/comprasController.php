@@ -23,7 +23,12 @@ class comprasController extends Controller
         $compra -> moneda = $request->input('inputMoneda');
         $compra -> cantidad = $request->input('inputProductoCantidad');
         $compra -> empleado = $request->input('inputEmpleado');
-       
+
+        $curTime = new \DateTime();
+        $compra -> anio = $curTime->format('Y');
+        $compra -> mes = $curTime->format('m');
+        $compra -> dia = $curTime->format('d');
+        
         $compra -> save();
 
         

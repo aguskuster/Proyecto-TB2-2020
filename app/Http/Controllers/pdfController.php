@@ -11,7 +11,7 @@ class pdfController extends Controller
 {
 
 
-    public function generarPDFIndividual($id){
+    public function generarPDFIndividualCompra($id){
      
         $compras = comprasModel::where('id',$id)->first();
 
@@ -20,33 +20,37 @@ class pdfController extends Controller
         return $pdf->stream('ReporteCompra.pdf');
     }
 
+
+
     public function generarPDFCompraFiltrado(Request $request){
-        $tipo = $request -> get('tipoBuscar');
+            $dia = $request->input('dia');
+            $mes = $request->input('mes');
+            $anio = $request->input('anio');
 
-        if ($tipo== "day"){
-
-            $compras = comprasModel::where('created_at',$request->input('fecha'))->first();
-
+            $compras = comprasModel::where('anio','LIKE',$anio)->where('mes','LIKE',$mes)->where('dia','LIKE',$dia)->get();
             $pdf = PDF::loadView('./reportes/reporteCompras', compact('compras'));
-    
             return $pdf->stream('ReporteCompra.pdf');
-        }elseif($tipo=="month"){
+    }
 
-            $compras = comprasModel::where('created_at',$request->input('fecha'))->first();
 
+    public function generarPDFIndividualVenta($id){
+     
+        $compras = ventaModel::where('id',$id)->first();
+
+        $pdf = PDF::loadView('./reportes/reporteComprasIndividual', compact('compras'));
+
+        return $pdf->stream('ReporteVenta.pdf');
+    }
+
+
+
+    public function generarPDFVentaFiltrado(Request $request){
+            $dia = $request->input('dia');
+            $mes = $request->input('mes');
+            $anio = $request->input('anio');
+
+            $compras = ventaModel::where('anio','LIKE',$anio)->where('mes','LIKE',$mes)->where('dia','LIKE',$dia)->get();
             $pdf = PDF::loadView('./reportes/reporteCompras', compact('compras'));
-    
-            return $pdf->stream('ReporteCompra.pdf');
-        }else{
-
-            $compras = comprasModel::where('created_at',$request->input('fecha'))->first();
-
-            $pdf = PDF::loadView('./reportes/reporteCompras', compact('compras'));
-    
-            return $pdf->stream('ReporteCompra.pdf');
-        }
-        
-        
-
+            return $pdf->stream('ReporteVenta.pdf');
     }
 }

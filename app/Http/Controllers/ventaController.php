@@ -23,6 +23,10 @@ class ventaController extends Controller
         $venta -> insumoCantidad = $request->input('selectProductoCantidad');
         $venta -> empleadoNombre = $request->input('inputVendedor');
         
+        $curTime = new \DateTime();
+        $venta -> anio = $curTime->format('Y');
+        $venta -> mes = $curTime->format('m');
+        $venta -> dia = $curTime->format('d');
        
       
         $venta -> save();

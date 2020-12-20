@@ -24,7 +24,7 @@
         <div class="container border p-1 border-dark mb-5">
              <center><h5>Datos de empleado</h5></center>
              <hr>
-            <label class="d-inline" for="nombreEmpleado">Empleado :</label> <p class="d-inline"> {{ auth()->user()->nombre }} </p> <br> 
+            <label class="d-inline" for="nombreEmpleado">Empleado :</label> <p class="d-inline"> {{ auth()->user()->nombre }}  {{ auth()->user()->apellido }}  </p> <br> 
             <label class="d-inline" for="nombreEmpleado">Forma de Pago :</label> <p class="d-inline">Tarjeta</p> <br>
         
         </div>

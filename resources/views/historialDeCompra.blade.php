@@ -18,13 +18,9 @@
     <br><br>
     <form action="/generarCompraPDFFiltrado" method="get" class="mb-3">
         <button type="submit" class="btn btn-danger float-right mr-1">Generar PDF</button>
-        
-        <select name="tipoBuscar" id="tipoBuscar" class="form-control d-inline float-right mr-1" style="width:10%">
-            <option value="month">Mes</option>
-            <option value="day">Dia</option>
-            <option value="year">Año</option>
-        </select>
-        <input type="text" name="fecha" class="form-control d-inline float-right mr-1" style="width:10%">
+        <input placeholder="año" type="number" name="anio" class="form-control d-inline float-right mr-1" style="width:10%">
+        <input placeholder="mes" type="number" name="mes" class="form-control d-inline float-right mr-1" style="width:10%">
+        <input placeholder="dia" type="number" name="dia" class="form-control d-inline float-right mr-1" style="width:10%">
     </form>
 
     
@@ -54,7 +50,7 @@
                         <td> {{ $c->precioUnitario }} {{ $c->moneda }} </td>
                         <td> {{ $c->cantidad }} </td>
                         <td> {{ $c->empleado }} </td>
-                        <td> {{ $c->created_at }} </td>
+                        <td> {{ $c->dia }}/{{ $c->mes }}/{{ $c->anio }} </td>
                         <td><a href="/generarCompraPDF/{{ $c->id }}"><i style="margin-left:10px;font-size:20px;color:red;" class="fas fa-file-pdf"></i></a></td>
                                    
 

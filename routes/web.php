@@ -157,7 +157,7 @@ Route::get('/bajaVenta/{id}', 'ventaController@listarVentaParaEliminar')->middle
 
 
 
-Route::get('/baja/{id}', 'comprasController@listarProductoParaEliminar')->middleware('autenticacion') ; 
+Route::get('/bajaStock/{id}', 'comprasController@listarProductoParaEliminar')->middleware('autenticacion') ; 
 
 Route::post('/bajaStock', 'comprasController@eliminarStock')->middleware('autenticacion'); 
 

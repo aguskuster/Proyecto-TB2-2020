@@ -23,6 +23,8 @@ class ventaController extends Controller
         $venta -> insumoCantidad = $request->input('selectProductoCantidad');
         $venta -> empleadoNombre = $request->input('inputVendedor');
         
+
+
         $curTime = new \DateTime();
         $venta -> anio = $curTime->format('Y');
         $venta -> mes = $curTime->format('m');
@@ -31,7 +33,9 @@ class ventaController extends Controller
       
         $venta -> save();
 
-        self::descontarArticulo($request->get('selectProductoNombre'));
+        $compra = comprasModel::where('nombreProducto',$request->get('selectProductoNombre'))->first();
+        $compra -> cantidad = $compra -> cantidad - $request->input('selectProductoCantidad');
+        $compra -> save();
         
 
         return redirect('historialVenta');
@@ -39,10 +43,7 @@ class ventaController extends Controller
     
     }
 
-    public function descontarArticulo($articulo){
-        $compra = comprasModel::where('nombreProducto',$articulo)->first();
-
-    }
+  
 
     
  

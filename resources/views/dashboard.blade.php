@@ -12,6 +12,7 @@
 
     body {
         font-family: 'Raleway', sans-serif;
+        background-color:white;
     }
 
     .container {
@@ -126,6 +127,7 @@
             <p class="copy">Lo ultimo en tecnologia e Informatica</p>
         </div>
         <main>
+        <div class="container-fluid" style="background-color:white;">
             <section class="container" id="products">
                 <h2 class="subtitle">Productos mas pedidos</h2>
                 <div class="container-product">
@@ -153,6 +155,7 @@
                 </div>
 
             </section>
+        </div>
             <section class="gallery" id="gallery">
                 <div class="container">
                     <h2 class="subtitle">Catalogo de Productos en Stock</h2>
